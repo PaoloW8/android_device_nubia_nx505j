@@ -1,0 +1,2 @@
+allow mediaserver camera_prop:property_service set;
+allow mediaserver audiod:binder call;

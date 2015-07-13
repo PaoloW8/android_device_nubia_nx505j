@@ -1,0 +1,49 @@
+/sys/devices/virtual/timed_output/vibrator/vtg_level	u:object_r:vibeamp_sysfs:s0
+
+/sys/devices/f9927000.i2c/i2c-5/5-005d/wakeup_gesture	u:object_r:touchtune_sysfs:s0
+/sys/devices/f9927000.i2c/i2c-5/5-005d/touch_key_array	u:object_r:touchtune_sysfs:s0
+/sys/devices/f9927000.i2c/i2c-5/5-005d/keys_enabled	u:object_r:touchtune_sysfs:s0
+/sys/devices/f9927000.i2c/i2c-5/5-005d/palm2sleep       u:object_r:touchtune_sysfs:s0
+
+/sys/devices/qpnp-ztemt_hw_version/ztemt_hw_version	u:object_r:ztehw_sysfs:s0
+
+/persist/.genmac					u:object_r:wifi_data_file:s0
+/persist/.bt_nv.bin					u:object_r:bluetooth_data_file:s0
+
+/data/cam_socket.*					u:object_r:camera_socket:s0
+
+/dev/block/platform/msm_sdcc.1/by-name/tz 		u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/pad		u:object_r:modem_efs_partition_device:s0
+
+/dev/socket/mpctl					u:object_r:mpctl_socket:s0
+/data/system/default_values				u:object_r:mpctl_data_file:s0
+
+/sys/devices/virtual/proximity/proximity/prox_calibrate_start		u:object_r:proxcal_sysfs:s0
+/sys/devices/virtual/proximity/proximity/prox_offset_cal_start		u:object_r:proxcal_sysfs:s0
+
+/persist/proxdata/threshold				u:object_r:persist_proxcal_file:s0
+
+/sys/kernel/fast_charge/force_fast_charge		u:object_r:fastcharge_sysfs:s0
+/sys/kernel/fast_charge/fast_charge_level		u:object_r:fastcharge_sysfs:s0
+/sys/kernel/fast_charge/available_charge_levels		u:object_r:fastcharge_sysfs:s0
+
+/sys/devices/platform/kcal_ctrl.0/kcal			u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_min		u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_enable		u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_invert		u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_sat		u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_hue		u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_val		u:object_r:livedisplay_sysfs:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_cont		u:object_r:livedisplay_sysfs:s0
+
+/sys/module/cpu_boost/parameters/cpu_boost		u:object_r:boost_sysfs:s0
+/sys/module/intelli_plug/parameters/touch_boost_active	u:object_r:boost_sysfs:s0
+
+/dev/hidg0						u:object_r:usbkeyboard_device:s0
+/dev/hidg1						u:object_r:usbkeyboard_device:s0
+
+/dev/bcm2079x                                 u:object_r:nfc_device:s0
+/dev/pn54x                                    u:object_r:nfc_device:s0
+/dev/ttyHSL1                                  u:object_r:ircontrol_device:s0
+/sys/devices/.*bcl.*(/.*)?                    u:object_r:sysfs_thermal:s0
+

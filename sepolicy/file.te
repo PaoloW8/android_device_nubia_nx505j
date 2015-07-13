@@ -1,0 +1,9 @@
+type livedisplay_sysfs, sysfs_type, file_type;
+type vibeamp_sysfs, sysfs_type, file_type;
+type touchtune_sysfs, sysfs_type, file_type;
+type ztehw_sysfs, sysfs_type, file_type;
+type proxcal_sysfs, sysfs_type, file_type;
+type persist_proxcal_file, file_type;
+type fastcharge_sysfs, sysfs_type, file_type;
+type boost_sysfs, sysfs_type, file_type;
+type usbkeyboard_device, file_type;

@@ -1,0 +1,2 @@
+allow sensors self:capability sys_nice;
+allow sensors sensors_persist_file:file { read open };

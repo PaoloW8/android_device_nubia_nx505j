@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+country="$(getprop persist.sys.country)"
+setprop ro.build.target_country $country
+

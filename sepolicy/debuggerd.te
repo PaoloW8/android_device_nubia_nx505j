@@ -1,0 +1,1 @@
+allow debuggerd shell_data_file:file { read getattr open };

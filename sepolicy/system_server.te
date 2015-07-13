@@ -1,0 +1,14 @@
+allow system_server default_prop:property_service set;
+allow system_server init_shell:binder transfer;
+allow system_server sysfs_battery_supply:dir search;
+allow system_server sysfs_battery_supply:file { read open };
+allow system_server persist_file:file { read open };
+allow system_server sensors_persist_file:dir search;
+allow system_server sensors_persist_file:file { read open };
+allow system_server recovery_cache_file:dir { read search open };
+allow system_server persist_proxcal_file:file { open read write };
+allow system_server livedisplay_sysfs:file rw_file_perms;
+allow system_server vibeamp_sysfs:file rw_file_perms;
+allow system_server touchtune_sysfs:file rw_file_perms;
+allow system_server ztehw_sysfs:file rw_file_perms;
+allow system_server time_daemon:unix_stream_socket connectto;

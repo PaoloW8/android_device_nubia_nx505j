@@ -1,0 +1,1 @@
+allow wpa sudaemon:unix_dgram_socket sendto;

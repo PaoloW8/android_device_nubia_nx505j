@@ -1,0 +1,1 @@
+allow installd location_app_data_file:file { getattr open read };

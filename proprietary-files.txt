@@ -29,8 +29,6 @@ lib/modules/texfat.ko
 lib/libqsap_sdk.so
 
 app/uei_sdk/uei_sdk.apk
-#-priv-app/ZIRControl_Z7/ZIRControl_Z7.apk
-#-priv-app/nubia_IRControl1/nubia_IRControl1.apk
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk

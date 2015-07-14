@@ -72,8 +72,26 @@ char const*const LCD_FILE
 char const *const RIGHT_BUTTON_FILE
         = "/sys/class/leds/led:rgb_green/brightness";
 
+char const *const RIGHT_BUTTON_LUT_FLAGS
+        = "/sys/class/leds/led:rgb_green/lut_flags";
+
+char const *const RIGHT_BUTTON_BLINK
+        = "/sys/class/leds/led:rgb_green/blink";
+
+char const *const RIGHT_BUTTON_RAMP_STEP_MS
+        = "/sys/class/leds/led:rgb_green/ramp_step_ms";
+
 char const *const LEFT_BUTTON_FILE
         = "/sys/class/leds/led:rgb_blue/brightness";
+
+char const *const LEFT_BUTTON_LUT_FLAGS
+        = "/sys/class/leds/led:rgb_blue/lut_flags";
+
+char const *const LEFT_BUTTON_BLINK
+        = "/sys/class/leds/led:rgb_blue/blink";
+
+char const *const LEFT_BUTTON_RAMP_STEP_MS
+        = "/sys/class/leds/led:rgb_blue/ramp_step_ms";
 
 char const*const BREATH_LED_BLINK
         = "/sys/class/leds/red/blink";
@@ -226,9 +244,13 @@ set_breath_light_locked(int event_source,
 	    if(event_source == BREATH_SOURCE_BUTTONS && last_state == BREATH_SOURCE_BUTTONS) {
 		ALOGD("disabling buttons backlight\n");
 		write_int(BREATH_LED_LUT_FLAGS, (int)PM_PWM_LUT_NO_TABLE); // smoothly turn led off
+		write_int(LEFT_BUTTON_LUT_FLAGS, (int)PM_PWM_LUT_NO_TABLE); // smoothly turn led off
+		write_int(RIGHT_BUTTON_LUT_FLAGS, (int)PM_PWM_LUT_NO_TABLE); // smoothly turn led off
 	    } else {
 		ALOGD("disabling blinking\n");
 		write_int(BREATH_LED_BLINK, 0); // just turn led off
+		write_int(LEFT_BUTTON_BLINK, 0); // just turn led off
+		write_int(RIGHT_BUTTON_BLINK, 0); // just turn led off
 	    }
 	    last_state = BREATH_SOURCE_NONE;
 	    return 0;
@@ -260,6 +282,8 @@ set_breath_light_locked(int event_source,
 
     char* light_template;
     int lut_flags = 0;
+    int lut_flags_left = 0;
+    int lut_flags_right = 0;
     if(active_states & BREATH_SOURCE_NOTIFICATION) {
 	state = &g_notification;
 	light_template = BREATH_LED_BRIGHTNESS_NOTIFICATION;
@@ -304,6 +328,8 @@ set_breath_light_locked(int event_source,
 	state = &g_buttons;
 	light_template = BREATH_LED_BRIGHTNESS_BUTTONS;
 	lut_flags = PM_PWM_LUT_RAMP_UP;
+	lut_flags_left = PM_PWM_LUT_RAMP_UP;
+	lut_flags_right = PM_PWM_LUT_RAMP_UP;
 	last_state = BREATH_SOURCE_BUTTONS;
     } else if(active_states & BREATH_SOURCE_ATTENTION) {
 	state = &g_attention;
@@ -317,6 +343,10 @@ set_breath_light_locked(int event_source,
 
     ALOGD("writing values: pause_lo=%d, pause_hi=%d, lut_flags=%d\n", offMS, onMS, lut_flags);
     write_int(BREATH_LED_BLINK, 0);
+    write_int(LEFT_BUTTON_BLINK, 0);
+    write_int(RIGHT_BUTTON_BLINK, 0);
+    write_int(LEFT_BUTTON_RAMP_STEP_MS, (int)40);
+    write_int(RIGHT_BUTTON_RAMP_STEP_MS, (int)40);
     write_str(BREATH_LED_DUTY_PCTS, light_template);
     write_int(BREATH_LED_RAMP_STEP_MS, (int)20);
     if(offMS > 0)
@@ -324,7 +354,11 @@ set_breath_light_locked(int event_source,
     if(onMS > 0)
 	write_int(BREATH_LED_PAUSE_HI, (int)onMS);
     write_int(BREATH_LED_LUT_FLAGS, lut_flags);
+    write_int(LEFT_BUTTON_LUT_FLAGS, lut_flags_left);
+    write_int(RIGHT_BUTTON_LUT_FLAGS, lut_flags_right);
     write_int(BREATH_LED_BLINK, 1);
+    write_int(LEFT_BUTTON_BLINK, 1);
+    write_int(RIGHT_BUTTON_BLINK, 1);
 
     return 0;
 }
@@ -443,6 +477,6 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
     .name = "MSM8974 lights Module",
-    .author = "xiaofeng",
+    .author = "xiaofeng, modified for NX505J by PaoloW8",
     .methods = &lights_module_methods,
 };

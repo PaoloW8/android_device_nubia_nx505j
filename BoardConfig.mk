@@ -18,6 +18,10 @@
 
 LOCAL_PATH := device/ZTE/NX505J
 
+PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+	frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl \
+	frameworks/base/data/keyboards/Generic.kcm:system/usr/keychars/Generic.kcm, $(PRODUCT_COPY_FILES))
+
 #Disable memcpy_base.S optimization
 TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
 

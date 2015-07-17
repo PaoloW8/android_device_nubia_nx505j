@@ -28,7 +28,9 @@ lib/modules/wlan.ko
 lib/modules/texfat.ko
 lib/libqsap_sdk.so
 
-app/uei_sdk/uei_sdk.apk
+-app/uei_sdk/uei_sdk.apk
+-app/ZTE_IRControl/ZTE_IRControl.apk
+lib/libBlurEffect.so
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk

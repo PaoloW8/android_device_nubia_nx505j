@@ -158,4 +158,6 @@ ro.gps.agps_provider=1
 ro.pip.gated=0
 
 persist.sys.isUsbOtgEnabled=true
+ro.qualcomm.perf.cores_online=1
+
 

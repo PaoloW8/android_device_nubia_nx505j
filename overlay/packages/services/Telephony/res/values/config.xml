@@ -21,16 +21,15 @@
     <!-- Determine whether calls to mute the microphone in PhoneUtils
                   are routed through the android.media.AudioManager class (true) or through
          the com.android.internal.telephony.Phone interface (false). -->
-    <bool name="send_mic_mute_to_AudioManager">false</bool>
+    <bool name="send_mic_mute_to_AudioManager">true</bool>
     <bool name="has_in_call_noise_suppression">true</bool>
     <bool name="csp_enabled">true</bool>
 
     <!-- Show enabled lte option for lte device -->
     <bool name="config_enabled_lte" translatable="false">false</bool>
+    <bool name="config_hardcodeDefaultMobileNetworks">false</bool>
 
-    <bool name="network_support_lte">true</bool>
-    <bool name="network_support_tdscdma">true</bool>
-    <bool name="network_support_wcdma">true</bool>
-    <bool name="network_support_srlte">true</bool>
+<!-- Flag whether to enable Proximity setting-->
+    <bool name="config_proximity_enable" translatable="false">true</bool>
 
 </resources>

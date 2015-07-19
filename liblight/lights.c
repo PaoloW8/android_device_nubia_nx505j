@@ -237,7 +237,8 @@ set_breath_light_locked(int event_source,
 	ALOGD("[LIGHTS.MSM8974] active_states=%d, last_state=%d, event_source=%d\n", active_states, last_state, event_source);
 	if(active_states == 0) {
 	    ALOGD("[LIGHTS.MSM8974] disabling buttons backlight\n");
-	    write_int(BREATH_LED_LUT_FLAGS, PM_PWM_LUT_NO_TABLE); // smoothly turn led off
+	    //write_int(BREATH_LED_LUT_FLAGS, PM_PWM_LUT_NO_TABLE); // smoothly turn led off
+	    write_int(BREATH_LED_BLINK, 0); // just turn led off
 	    write_int(LEFT_BUTTON_BLINK, 0);
 	    write_int(RIGHT_BUTTON_BLINK, 0);
 	    last_state = BREATH_SOURCE_NONE;

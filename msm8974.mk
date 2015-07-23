@@ -251,6 +251,9 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/powerprofile.sh:system/bin/powerprofile.sh
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.rc \
@@ -326,8 +329,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion
 
-#PRODUCT_BOOT_JARS += \
-#    WfdCommon
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 PRODUCT_PACKAGES += \
     ntfs-3g \
@@ -339,14 +342,10 @@ PRODUCT_PACKAGES += \
     libjni_latinime
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf \
-    $(LOCAL_PATH)/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
-    $(LOCAL_PATH)/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
-    $(LOCAL_PATH)/etc/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
-    $(LOCAL_PATH)/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
-    $(LOCAL_PATH)/etc/bluetooth/network.conf:system/etc/bluetooth/network.conf \
+    $(LOCAL_PATH)/etc/bluetooth/auto_pair_devlist.conf:system/etc/bluetooth/auto_pair_devlist.conf \
+    $(LOCAL_PATH)/etc/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
+    $(LOCAL_PATH)/etc/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
     $(LOCAL_PATH)/etc/cne/andsfCne.xml:system/etc/cne/andsfCne.xml \
-    $(LOCAL_PATH)/etc/cne/NsrmConfiguration.xml:system/etc/cne/NsrmConfiguration.xml \
     $(LOCAL_PATH)/etc/cne/SwimConfig.xml:system/etc/cne/SwimConfig.xml \
     $(LOCAL_PATH)/etc/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/etc/gps.conf:system/etc/gps.conf \

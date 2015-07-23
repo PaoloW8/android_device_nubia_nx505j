@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
     <!--
-        Copyright (C) 2012 - 2013 Qualcomm Technologies, Inc.
+        Copyright (C) 2012 - 2014 Qualcomm Technologies, Inc.
         All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
     -->
 <WFDConfig>
@@ -32,7 +32,6 @@
 		 <H264Profiles>1</H264Profiles>
 		<Valid>1</Valid>
 	  </VideoHeader>
-  
 <CBP>
 	  <VideoCodec>
 		<Profile>1</Profile>
@@ -43,7 +42,7 @@
 		<MinimumSliceSize>0</MinimumSliceSize>
 		<SliceEncodingParams>0</SliceEncodingParams>
 		<FrameRateControlSupp>1</FrameRateControlSupp>
-		<VideoFps>30</VideoFps>
+		<VideoFps>24</VideoFps>
 	  </VideoCodec>
 </CBP>
 	  <StandbyResumeCapability>
@@ -163,7 +162,7 @@
 				<MaxBitrate>4000000</MaxBitrate>
 			</BIT4>
 			<BIT5>
-				<MinBitrate>5000000</MinBitrate>
+				<MinBitrate>2500000</MinBitrate>
 				<MaxBitrate>5000000</MaxBitrate>
 			</BIT5>
 			<BIT6>
@@ -172,11 +171,11 @@
 			</BIT6>
 			<BIT7>
 				<MinBitrate>5000000</MinBitrate>
-				<MaxBitrate>20000000</MaxBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
 			</BIT7>
 			<BIT8>
 				<MinBitrate>10000000</MinBitrate>
-				<MaxBitrate>40000000</MaxBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
 			</BIT8>
 			<BIT9>
 				<MinBitrate>10000000</MinBitrate>
@@ -203,7 +202,7 @@
 				<MaxBitrate>40000000</MaxBitrate>
 			</BIT14>
 			<BIT15>
-				<MinBitrate>5000000</MinBitrate>
+				<MinBitrate>2500000</MinBitrate>
 				<MaxBitrate>5000000</MaxBitrate>
 			</BIT15>
 			<BIT16>

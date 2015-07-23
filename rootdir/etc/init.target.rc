@@ -229,3 +229,18 @@ service ml_daemon /system/bin/ml_daemon
 
 on charger
     trigger ffbm
+
+service powerprofile /system/bin/powerprofile.sh
+    user root
+    oneshot
+    disabled
+
+on property:sys.perf.profile=2
+    start powerprofile
+
+on property:sys.perf.profile=1
+    start powerprofile
+
+on property:sys.perf.profile=0
+    start powerprofile
+

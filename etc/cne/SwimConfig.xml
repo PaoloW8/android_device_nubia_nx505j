@@ -58,11 +58,11 @@
       <ICD_HTTP_URI>http://cne.qualcomm.com/cne/v1/icd</ICD_HTTP_URI>
     </ICD>
     <TQE>
-      <SOCK_ACTIVE_THRESH units="ms">1200</SOCK_ACTIVE_THRESH>
+      <SOCK_ACTIVE_THRESH units="ms">3000</SOCK_ACTIVE_THRESH>
       <TQ_THRESH>0.15</TQ_THRESH>
-      <TQE_COUNT_THRESH>5</TQE_COUNT_THRESH>
-      <TQE_OVERALL_COUNT_THRESH>10</TQE_OVERALL_COUNT_THRESH>
-      <alphaTQE>0.7</alphaTQE>
+      <TQE_COUNT_THRESH>2</TQE_COUNT_THRESH>
+      <TQE_OVERALL_COUNT_THRESH>2</TQE_OVERALL_COUNT_THRESH>
+      <alphaTQE>0.8</alphaTQE>
       <T_BLACKLIST_TQE units="secs">3600</T_BLACKLIST_TQE>
     </TQE>
   </ModulesConfiguration>

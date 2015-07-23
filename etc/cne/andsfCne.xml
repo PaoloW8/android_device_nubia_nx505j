@@ -4,7 +4,7 @@
 	<Man>Qualcomm</Man>
 	<Mod>FFA</Mod>
 	<Andsf>
-	    <Version>4.5</Version>
+	    <Version>4.8</Version>
 		<Name>Test 1</Name>
 		<!-- ISRP>
 			<ForFlowBased>
@@ -89,7 +89,7 @@
 			<WQE>
 				<InterfaceManager>
 					<BQE_Disabled>false</BQE_Disabled>
-					<ICD_Disabled>false</ICD_Disabled>
+					<ICD_Disabled>true</ICD_Disabled>
 					<!-- Default bqe thresholds where no apIds are specified. -->
 					<BQE_Thresholds Id="128">
 						<RadioTechnology Type="CDMA2000">
@@ -205,14 +205,14 @@
                             <BBD_Disabled>false</BBD_Disabled>
                             <!-- Disabling Degraded Backhaul Detector module -->
                             <DBD_Disabled>false</DBD_Disabled>
-                            <!-- Threshold for DNS time beyond which TQE will declare FAIL -->
-                            <DNSThreshold units="msecs">20000</DNSThreshold>
                             <!-- Threshold on downlink gap indicator metric -->
-                            <DGIMThresh units="msecs">250</DGIMThresh>
+                            <DGIMThresh units="msecs">400</DGIMThresh>
+                            <!-- DBD always returns pass when average device throughput is greater than min(DBDTputThresh,BQE_Threshold) -->
+                            <DBDTputThresh units="bps">1000000</DBDTputThresh>
                             <!-- Time window for TQE history -->
-                            <TQETimeWindow units="secs">30</TQETimeWindow>
+                            <TQETimeWindow units="secs">20</TQETimeWindow>
                             <!-- Minimum fraction of sockets reporting BAD (among valid ones) to declare TQE FAIL -->
-                            <RatioThresh>0.5</RatioThresh>
+                            <RatioThresh>0.2</RatioThresh>
                         </TQE_Thresholds>
                         <!-- The next element is for reference only to show how to -->
                         <!-- set up TQE thresholds for a list of specific apids -->
@@ -224,15 +224,58 @@
                             </apIds>
                             <BBD_Disabled>false</BBD_Disabled>
                             <DBD_Disabled>false</DBD_Disabled>
-                            <DNSThreshold units="msecs">20000</DNSThreshold>
-                            <DGIMThresh units="msecs">250</DGIMThresh>
-                            <TQETimeWindow units="secs">30</TQETimeWindow>
-                            <RatioThresh>0.5</RatioThresh>
+                            <DGIMThresh units="msecs">400</DGIMThresh>
+                            <DBDTputThresh units="bps">1000000</DBDTputThresh>
+                            <TQETimeWindow units="secs">20</TQETimeWindow>
+                            <RatioThresh>0.2</RatioThresh>
+                        </TQE_Thresholds>
                         -->
                     </TQE>
 				</InterfaceManager>
 			</WQE>
-			<CQE>
+			<CQE prodId="Rome">
+				<!-- Default node for CQE_Thresholds element -->
+				<CQE_Thresholds Id ="128">
+                    <!-- RSSI threshold from which all values greather than it is considered as good for wlan to be -->
+					<!-- a candidate for interface selection -->
+					<RSSIAddThreshold units="dbm">-86</RSSIAddThreshold>
+					<!-- RSSI threshold from which all values lesser than it is considered as bad for wlan to be -->
+					<!-- a candidate for interface selection -->
+					<RSSIDropThreshold units="dbm">-91</RSSIDropThreshold>
+					<!-- Interval over whcih RSSI values are averaged -->
+					<RSSIAveragingInterval units="secs">5</RSSIAveragingInterval>
+					<!-- RSSI threshold below which MAC hysteresis timer is not started -->
+					<RSSIMacTimerThreshold units="dbm">-91</RSSIMacTimerThreshold>
+					<!-- Periodic timer to evaluate CQE parameters including RSSI and MAC stats -->
+					<!-- Setting CQETimer to zero disables the CQE -->
+					<CQETimer units="secs">2</CQETimer>
+					<!-- Time for which CQE is not reevaluted after it was declared bad due to MAC stats -->
+					<MACHysteresisTimer units="secs">120</MACHysteresisTimer>
+					<!-- Alpha to compute RSSI averaging based on IIR filtering mechanism -->
+					<MACStatsAveragingAlpha>0.5</MACStatsAveragingAlpha>
+					<!-- Threshold for RX MPDU PER -->
+					<RMP_THR>0.3</RMP_THR>
+					<!-- Minimum MPDU count to activate RX MPDU PER -->
+					<RMP_CNT_THR>10</RMP_CNT_THR>
+					<!-- Cutoff RX MCS index -->
+					<RX_MCS_THR>0</RX_MCS_THR>
+					<!-- Cutoff RX BW index -->
+					<RX_BW_THR>0</RX_BW_THR>
+					<!-- Threshold for TX MSDU drop -->
+					<TMD_THR>0.1</TMD_THR>
+					<!-- Minimum MSDU count to activate TX MSDU drop -->
+					<TMD_CNT_THR>2</TMD_CNT_THR>
+					<!-- Threshold for MPDU retry rate -->
+					<TMR_THR>0.7</TMR_THR>
+					<!-- Minimum MPDU count to activate MPDU retry rate -->
+					<TMR_CNT_THR>4</TMR_CNT_THR>
+					<!-- Cutoff TX MCS index -->
+					<TX_MCS_THR>0</TX_MCS_THR>
+					<!-- Cutoff TX BW index -->
+					<TX_BW_THR>0</TX_BW_THR>
+				</CQE_Thresholds>
+			</CQE>
+			<CQE prodId="Pronto">
 				<!-- Default node for CQE_Thresholds element -->
 				<CQE_Thresholds Id ="128">
 					<!-- RSSI threshold from which all values greather than it is considered as good for wlan to be -->
@@ -295,6 +338,7 @@
 					<MACHysteresisTimer units="secs">110</MACHysteresisTimer>
 					<MACStatsAveragingAlpha>0.1</MACStatsAveragingAlpha>
 					<FrameCntThreshold units="frames">25</FrameCntThreshold>
+					<ColdStartThreshold units="frames">2</ColdStartThreshold>
 					<MACMibThreshold2a>0.25</MACMibThreshold2a>
 					<RetryMetricWeight2a>0.1061</RetryMetricWeight2a>
 					<MultiRetryMetricWeight2a>0.0984</MultiRetryMetricWeight2a>

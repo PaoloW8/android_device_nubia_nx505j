@@ -334,6 +334,7 @@
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
     -->
     <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">400</integer>
 
     <!-- Control the behavior when the user short presses the power button.
             0 - Nothing

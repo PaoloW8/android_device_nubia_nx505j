@@ -118,7 +118,7 @@ audio.offload.buffer.size.kb=32
 av.offload.enable=true
 
 #enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=true
+use.voice.path.for.pcm.voip=false
 
 #disable dsp gapless mode by default
 audio.offload.gapless.enabled=false

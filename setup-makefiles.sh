@@ -164,9 +164,9 @@ PRODUCT_PACKAGES += \\
     libTimeService \\
     libmdmdetect \\
     libperipheral_client \\
-    libscale \\
-    qcrilmsgtunnel \\
-    shutdownlistener
+    libscale
+#    qcrilmsgtunnel \\
+#    shutdownlistener
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -312,25 +312,25 @@ LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := qcrilmsgtunnel
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := qcrilmsgtunnel
+#LOCAL_MODULE_OWNER := $VENDOR
+#LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+#LOCAL_MODULE_CLASS := APPS
+#LOCAL_CERTIFICATE := platform
+#include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := shutdownlistener
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := shutdownlistener
+#LOCAL_MODULE_OWNER := $VENDOR
+#LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+#LOCAL_MODULE_CLASS := APPS
+#LOCAL_CERTIFICATE := platform
+#include \$(BUILD_PREBUILT)
 
 endif
 

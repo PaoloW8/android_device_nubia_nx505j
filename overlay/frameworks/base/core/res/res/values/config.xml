@@ -217,6 +217,9 @@
         <item>"7,1"</item>
     </string-array>
 
+    <!-- Configuration to sending and receiving Mms when mobile data is disable.-->
+    <bool name="config_enable_mms_with_mobile_data_off">true</bool>
+
     <!-- Set to true if the RSSI should always display CDMA signal strength even on EVDO -->
     <bool name="config_alwaysUseCdmaRssi">false</bool>
 
@@ -334,7 +337,7 @@
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
     -->
     <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">400</integer>
+    <integer name="config_proximityCheckTimeout">200</integer>
 
     <!-- Control the behavior when the user short presses the power button.
             0 - Nothing

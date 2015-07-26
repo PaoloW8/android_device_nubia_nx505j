@@ -18,6 +18,7 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 persist.radio.rat_on=combine
 ril.subscription.types=NV,RUIM
+ro.ril.enable.amr.wideband=1
 DEVICE_PROVISIONED=1
 
 debug.sf.hw=1
@@ -138,7 +139,7 @@ ro.config.devicename=nubia Z7 max
 persist.radio.multisim.config=dsds
 ro.telephony.default_network=10
 ro.telephony.default_cdma_sub=0
-ro.ril.force_eri_from_xml=true
+#ro.ril.force_eri_from_xml=true
 
 #set primary card enabled
 persist.radio.primarycard=false

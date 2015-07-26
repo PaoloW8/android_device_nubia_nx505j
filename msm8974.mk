@@ -277,10 +277,6 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     ueventd.rc
 
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf \
@@ -297,12 +293,9 @@ PRODUCT_PACKAGES += \
     hostapd.deny \
     hostapd \
     wpa_supplicant \
-    wpa_supplicant.conf
-
-PRODUCT_PACKAGES += \
-    p2p_supplicant_overlay.conf \
+    wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
-    wpa_supplicant_ath6kl.conf
+    p2p_supplicant_overlay.conf 
 
 # ANT+
 PRODUCT_PACKAGES += \

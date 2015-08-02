@@ -24,5 +24,9 @@
     <string name="sim_slot"></string>
     <string name="sim_slot_2"></string>
     <string name="sim_slot_3"></string>
+    <bool name="config_showRsrpSignalLevelforLTE">true</bool>
+
+<!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
+    <bool name="config_show4GForLTE">false</bool>
 </resources>
 

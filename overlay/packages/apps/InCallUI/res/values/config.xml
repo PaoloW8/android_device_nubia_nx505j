@@ -18,5 +18,5 @@
 -->
 
 <resources>
-    <bool name="config_disable_audio_boost">false</bool>
+    <bool name="config_disable_audio_boost">true</bool>
 </resources>

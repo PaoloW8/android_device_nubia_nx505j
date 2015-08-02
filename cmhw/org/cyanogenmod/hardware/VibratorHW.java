@@ -21,19 +21,17 @@ import java.io.File;
 
 public class VibratorHW {
     private static String LEVEL_PATH = "/sys/class/timed_output/vibrator/vtg_level";
-    private static String MAX_PATH = "/sys/class/timed_output/vibrator/vtg_max";
-    private static String MIN_PATH = "/sys/class/timed_output/vibrator/vtg_min";
 
     public static boolean isSupported() {
         return new File(LEVEL_PATH).exists();
     }
 
     public static int getMaxIntensity()  {
-        return Integer.parseInt(FileUtils.readOneLine(MAX_PATH));
+        return 31;
     }
 
     public static int getMinIntensity()  {
-        return Integer.parseInt(FileUtils.readOneLine(MIN_PATH));
+        return 12;
     }
 
     public static int getWarningThreshold()  {
@@ -45,7 +43,7 @@ public class VibratorHW {
     }
 
     public static int getDefaultIntensity()  {
-        return getMaxIntensity();
+        return 22;
     }
 
     public static boolean setIntensity(int intensity)  {

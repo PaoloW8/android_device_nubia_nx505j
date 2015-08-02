@@ -257,9 +257,10 @@ on boot
 	chown system system /sys/kernel/lcd_enhance/disptype
 	chmod 0666 /sys/kernel/lcd_enhance/disptype
 	
-    chown system system /sys/class/timed_output/vibrator/enable
-    chown system system /sys/class/timed_output/vibrator/vtg_level
-	
+	chown system system /sys/class/timed_output/vibrator/enable
+	chown system system /sys/class/timed_output/vibrator/vtg_level
+	chmod 0664 /sys/class/timed_output/vibrator/vtg_level
+
 	# gamma
 	chown root system  /sys/module/mdss_dsi_ctrl/kgamma_bn
 	chown root system  /sys/module/mdss_dsi_ctrl/kgamma_bp

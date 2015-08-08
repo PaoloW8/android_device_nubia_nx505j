@@ -6,7 +6,7 @@
   {
     "repository": "android_hardware_qcom_fm",
     "target_path": "hardware/qcom/fm"
-  }
+  },
   {
     "repository": "arm-cortex_a15-linux-gnueabihf-linaro_4.9",
     "target_path": "prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-gnueabihf-linaro_4.9"

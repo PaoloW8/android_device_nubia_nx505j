@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+    {
+        [custom        <GLOBAL>        0
+                       <CHINA_MOBILE>  1
+                       <CHINA_UNICOM>  2
+                       <CHINA_TELECOM> 3
+                       <CM_CU_CHANNEL> 4],
+        [mobilepattern  <DSDS>         0
+                        <DSDA>         1
+                        <TSTS>         2
+                        <UNKOWN>       3(include single card)],
+        [ims            <support>      1
+                        <notsupport>   0],
+        [srlte          <support>      1
+                        <notsupport>   0],
+        [mbn            <support>      1
+                        <notsupport>   0]
+    }
+    
+    example:
+    <config  custom="1"
+         mobilepattern="0"
+         ims="1"
+         srlte="1"
+         mbn="1"/>
+/>
+*/
+-->
+<ap-config version="1">
+  <config  custom="2"
+           mobilepattern="0"
+           ims="1"
+           srlte="0"
+           mbn="1"
+  />
+</ap-config>

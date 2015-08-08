@@ -24,8 +24,6 @@ bin/tp_node.sh
 
 -lib/libcnefeatureconfig.so
 
-lib/modules/wlan.ko
-lib/modules/texfat.ko
 lib/libqsap_sdk.so
 
 -app/uei_sdk/uei_sdk.apk
@@ -154,11 +152,11 @@ lib/libril.so
 lib/libreference-ril.so
 lib/librilutils.so
 framework/WfdCommon.jar
-#etc/permissions/qcnvitems.xml
-#etc/permissions/qcrilhook.xml
-#framework/qcnvitems.jar
-#framework/qcrilhook.jar
-#-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+framework/qcnvitems.jar
+framework/qcrilhook.jar
+-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 #-app/shutdownlistener/shutdownlistener.apk
 
 # Sensors

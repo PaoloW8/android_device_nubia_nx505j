@@ -26,4 +26,7 @@
     <string name="su_indicator_summary">Show superuser indicator on status bar when a session is active</string>
     <string name="statusbar_exclamation_marks_display">Data connection indicator</string>
     <string name="statusbar_exclamation_marks_desc">Show exclamation marks near signal strength icons when data connection is not avaliable</string>
+    <!-- Headphones icon switch -->
+    <string name="show_headset_icon_title">Headset icon</string>
+    <string name="show_headset_icon_summary">Shows icon when headsets are connected.</string>
 </resources>

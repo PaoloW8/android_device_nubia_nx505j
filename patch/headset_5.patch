@@ -1,0 +1,15 @@
+--- Settings/res/xml/status_bar_settings.xml
++++ Settings/res/xml/status_bar_settings.xml
+@@ -73,6 +73,12 @@
+         android:defaultValue="true" />
+ 
+     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
++            android:key="show_headset_icon"
++            android:title="@string/show_headset_icon_title"
++            android:summary="@string/show_headset_icon_summary"
++            android:defaultValue="true" />
++
++    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+         android:key="status_bar_notif_count"
+         android:title="@string/status_bar_notif_count_title"
+         android:summary="@string/status_bar_notif_count_summary"

@@ -1,0 +1,52 @@
+--- Settings/src/com/android/settings/cyanogenmod/StatusBarSettings.java
++++ Settings/src/com/android/settings/cyanogenmod/StatusBarSettings.java
+@@ -46,6 +46,7 @@
+ 
+     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
++    private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
+     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+ 
+@@ -54,6 +55,7 @@
+ 
+     private ListPreference mStatusBarClock;
+     private ListPreference mStatusBarAmPm;
++    private ListPreference mStatusBarNetworkTraffic;
+     private ListPreference mStatusBarBattery;
+     private ListPreference mStatusBarBatteryShowPercent;
+ 
+@@ -66,6 +68,8 @@
+ 
+         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
+         mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
++
++        mStatusBarNetworkTraffic = (ListPreference) findPreference(STATUS_BAR_NETWORK_TRAFFIC_STYLE);
+         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+         mStatusBarBatteryShowPercent =
+                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+@@ -86,6 +90,11 @@
+             mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
+             mStatusBarAmPm.setOnPreferenceChangeListener(this);
+         }
++
++        int networkTrafficStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, 3);
++        mStatusBarNetworkTraffic.setValue(String.valueOf(networkTrafficStyle));
++        mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntry());
++        mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
+ 
+         int batteryStyle = Settings.System.getInt(resolver,
+                 Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+@@ -146,6 +155,12 @@
+             mStatusBarBatteryShowPercent.setSummary(
+                     mStatusBarBatteryShowPercent.getEntries()[index]);
+             return true;
++        } else if (preference == mStatusBarNetworkTraffic) {
++            int networkTrafficStyle = Integer.valueOf((String) newValue);
++            int index = mStatusBarNetworkTraffic.findIndexOfValue((String) newValue);
++            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, networkTrafficStyle);
++            mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntries()[index]);
++            return true;
+         }
+         return false;
+     }

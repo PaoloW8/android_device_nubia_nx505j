@@ -244,3 +244,11 @@ on property:sys.perf.profile=1
 on property:sys.perf.profile=0
     start powerprofile
 
+service set_softkey /system/bin/set_softkey.sh
+    user root
+    oneshot
+    disabled
+
+on property:softkey.change=1
+    start set_softkey
+

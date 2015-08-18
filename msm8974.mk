@@ -254,6 +254,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/powerprofile.sh:system/bin/powerprofile.sh
 
+#enable/disable softkey script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.rc \

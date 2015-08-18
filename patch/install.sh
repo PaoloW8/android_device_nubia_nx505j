@@ -21,6 +21,13 @@ git apply $patchdir/09.patch
 git apply $patchdir/10.patch
 git apply $patchdir/headset_1.patch
 git apply $patchdir/headset_4.patch
+git apply $patchdir/3fingers_2.patch
+echo " "
+
+cd ..
+cd policy
+echo "Applying Framerworks/policy patch..."
+git apply $patchdir/3fingers_3.patch
 echo " "
 
 cd ../../..
@@ -29,11 +36,20 @@ echo "Applying Settings patch..."
 git apply $patchdir/07.patch
 git apply $patchdir/08.patch
 git apply $patchdir/headset_5.patch
+git apply $patchdir/3fingers_1.patch
 echo " "
 
 echo "Adding Files if not exist..."
 cd ../../..
-cd frameworks/base/packages
+
+cd frameworks/base/policy
+if [ ! -e src/com/android/internal/policy/impl/OPGesturesListener.java ]; then
+	git apply $patchdir/3fingers_4.patch
+	echo "OPGesturesListener.java added"
+fi
+
+cd ..
+cd packages
 if [ ! -d SystemUIExt ]; then
 	mkdir SystemUIExt
 	cd SystemUIExt

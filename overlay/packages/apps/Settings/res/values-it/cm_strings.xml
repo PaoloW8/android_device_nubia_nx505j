@@ -29,4 +29,7 @@
   <!-- Headphones icon switch -->
   <string name="show_headset_icon_title">Icona Cuffie</string>
   <string name="show_headset_icon_summary">Visualizza l\'icona delle cuffie quando connesse</string>
+  <!-- Three-fingers-swipe to screenshot -->
+  <string name="three_finger_gesture">Gesture tre dita</string>
+  <string name="three_finger_gesture_summary">Swipe con tre dita per fare lo screenshot</string>
 </resources>

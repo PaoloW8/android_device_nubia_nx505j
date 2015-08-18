@@ -1,0 +1,16 @@
+--- core/java/android/provider/Settings.java
++++ core/java/android/provider/Settings.java
+@@ -3560,6 +3560,13 @@
+          * @hide
+          */
+         public static final String SHOW_HEADSET_ICON = "show_headset_icon";
++
++         /**
++         * Three Finger Gesture from Oppo
++         *
++         * @hide
++         */
++        public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
+ 
+         /**
+          * Settings to backup. This is here so that it's in the same place as the settings

@@ -1,6 +1,6 @@
 --- SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
 +++ SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
-@@ -187,6 +187,7 @@
+@@ -188,6 +188,7 @@
  import com.android.systemui.statusbar.policy.KeyguardUserSwitcher;
  import com.android.systemui.statusbar.policy.LocationControllerImpl;
  import com.android.systemui.statusbar.policy.NetworkControllerImpl;
@@ -8,7 +8,7 @@
  import com.android.systemui.statusbar.policy.NextAlarmController;
  import com.android.systemui.statusbar.policy.PreviewInflater;
  import com.android.systemui.statusbar.policy.RotationLockControllerImpl;
-@@ -378,6 +379,9 @@
+@@ -379,6 +380,9 @@
  
      private boolean mShowCarrierInPanel = false;
  
@@ -18,20 +18,20 @@
      // position
      int[] mPositionTmp = new int[2];
      boolean mExpandedVisible;
-@@ -1010,6 +1014,8 @@
+@@ -1011,6 +1015,8 @@
          mMoreIcon = mStatusBarView.findViewById(R.id.moreIcon);
          mNotificationIcons.setOverflowIndicator(mMoreIcon);
          mStatusBarContents = (LinearLayout)mStatusBarView.findViewById(R.id.status_bar_contents);
 +
-+        mNetworkTraffic = (NetworkTraffic)mStatusBarView.findViewById(R.id.network_traffic);
++	mNetworkTraffic = (NetworkTraffic)mStatusBarView.findViewById(R.id.network_traffic);
  
          mClockView = (TextView) mStatusBarView.findViewById(R.id.clock);
          mClockLocation = Settings.System.getIntForUser(mContext.getContentResolver(),
-@@ -3860,6 +3866,7 @@
+@@ -3875,6 +3881,7 @@
          animateCollapsePanels();
          updatePublicMode(); 
-         updateNotifications();
-+        mNetworkTraffic.updateSettings();
+         updateNotifications(true);
++	mNetworkTraffic.updateSettings();
          resetUserSetupObserver();
          setControllerUsers();
  

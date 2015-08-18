@@ -122,7 +122,6 @@ key 99    SYSRQ
 key 100   ALT_RIGHT
 # key 101 "KEY_LINEFEED"
 #/* modified by ZTEMT 2014.11.5 */
-#key 102   MOVE_HOME
 key 102   HOME              VIRTUAL
 #/* ZTEMT END */
 key 103   DPAD_UP
@@ -162,7 +161,6 @@ key 128   MEDIA_STOP
 # key 137 "KEY_CUT"
 # key 138 "KEY_HELP"
 #/* modified by ZTEMT 2014.11.5 */
-#key 139   MENU
 key 139   MENU              VIRTUAL
 #/* ZTEMT END */
 key 140   CALCULATOR
@@ -184,7 +182,6 @@ key 155   ENVELOPE
 key 156   BOOKMARK
 # key 157 "KEY_COMPUTER"
 #/* modified by ZTEMT 2014.11.5 */
-#key 158   BACK
 key 158   BACK              VIRTUAL
 #/* ZTEMT END */
 key 159   FORWARD

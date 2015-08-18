@@ -17,6 +17,7 @@
 package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
+import android.os.SystemProperties;
 
 /*
  * Disable capacitive keys
@@ -40,6 +41,7 @@ public class KeyDisabler {
     }
 
     public static boolean setActive(boolean state) {
+	SystemProperties.set ( "softkey.change" ,  "1" );
         return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
     }
 

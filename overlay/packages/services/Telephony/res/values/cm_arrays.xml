@@ -16,7 +16,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="preferred_network_mode_choices_cm" translatable="false">
-        <item>@string/preferred_network_mode_td_scdma_lte_gsm_wcdma_cdma_evdo_choice </item>
+        <item>@string/preferred_network_mode_td_scdma_lte_gsm_wcdma_cdma_evdo_choice</item>
         <item>@string/preferred_network_mode_td_scdma_gsm_wcdma_cdma_evdo_choice</item>
         <item>@string/preferred_network_mode_td_scdma_gsm_wcdma_lte_choice</item>
         <item>@string/preferred_network_mode_td_scdma_wcdma_lte_choice</item>
@@ -27,11 +27,12 @@
         <item>@string/preferred_network_mode_td_scdma_wcdma_choice</item>
         <item>@string/preferred_network_mode_td_scdma_only_choice</item>
         <item>@string/preferred_network_mode_lte_wcdma_choice</item>
-        <item>@string/preferred_network_mode_cdma_evdo_gsm_wcdma_choice</item>
-        <item>@string/preferred_network_mode_global_choice</item>
-        <item>@string/preferred_network_mode_cdma_lte_evdo_choice</item>
-        <item>@string/preferred_network_mode_gsm_wcdma_lte_choice</item>
         <item>@string/preferred_network_mode_lte_choice</item>
+        <item>@string/preferred_network_mode_global_choice</item>
+        <item>@string/preferred_network_mode_gsm_wcdma_lte_choice</item>
+        <item>@string/preferred_network_mode_cdma_lte_evdo_choice</item>
+        <item>@string/preferred_network_mode_cdma_evdo_gsm_wcdma_choice</item>
+        <item>@string/preferred_network_mode_evdo_only_choice</item>
         <item>@string/preferred_network_mode_cdma_wo_evdo_choice</item>
         <item>@string/preferred_network_mode_cdma_evdo_auto_choice</item>
         <item>@string/preferred_network_mode_gsm_wcdma_auto_choice</item>

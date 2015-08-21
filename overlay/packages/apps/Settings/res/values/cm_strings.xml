@@ -32,4 +32,5 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+    <string name="qs_screenshot_tile">Screenshot</string>
 </resources>

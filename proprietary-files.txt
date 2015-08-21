@@ -32,7 +32,6 @@ lib/libBlurEffect.so
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
--priv-app/com.qualcomm.msapm/com.qualcomm.msapm.apk
 bin/loc_launcher
 bin/location-mq
 bin/lowi-server
@@ -151,13 +150,12 @@ lib/libmdmdetect.so
 lib/libril.so
 lib/libreference-ril.so
 lib/librilutils.so
-framework/WfdCommon.jar
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 framework/qcnvitems.jar
 framework/qcrilhook.jar
--app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-#-app/shutdownlistener/shutdownlistener.apk
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-app/shutdownlistener/shutdownlistener.apk
 
 # Sensors
 bin/sensors.qcom
@@ -535,9 +533,6 @@ vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmQSM.so
 vendor/lib/libmmrtpdecoder.so
 vendor/lib/libmmrtpencoder.so
-vendor/lib/libmmwfdinterface.so
-vendor/lib/libmmwfdsinkinterface.so
-vendor/lib/libmmwfdsrcinterface.so
 vendor/lib/libmsapm_jni.so
 vendor/lib/libnetmgr.so
 vendor/lib/libNimsWrap.so
@@ -604,19 +599,6 @@ vendor/lib/libTimeService.so
 vendor/lib/libtzdrmgenprov.so
 vendor/lib/libulp2.so
 vendor/lib/libvendorconn.so
-vendor/lib/libwfdcommonutils.so
-vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmsink.so
-vendor/lib/libwfdmmsrc.so
-vendor/lib/libwfdmmutils.so
-vendor/lib/libwfdnative.so
-vendor/lib/libwfdrtsp.so
-vendor/lib/libwfdsm.so
-vendor/lib/libwfduibcinterface.so
-vendor/lib/libwfduibcsinkinterface.so
-vendor/lib/libwfduibcsink.so
-vendor/lib/libwfduibcsrcinterface.so
-vendor/lib/libwfduibcsrc.so
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxt_native.so

@@ -14,9 +14,9 @@
 # limitations under the License.
 
 # inherit from the proprietary version
--include vendor/ZTE/NX505J/BoardConfigVendor.mk
+-include vendor/nubia/nx505j/BoardConfigVendor.mk
 
-LOCAL_PATH := device/ZTE/NX505J
+LOCAL_PATH := device/nubia/nx505j
 
 PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
 	frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl \
@@ -34,7 +34,7 @@ TARGET_GLOBAL_CPPFLAGS += -DANDROID_MULTI_SIM
 COMMON_GLOBAL_CFLAGS += -DQCOM_MEDIA_DISABLE_BUFFER_SIZE_CHECK
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := NX505J,nx505j,cm_NX505J,NX505j,jNX505
+TARGET_OTA_ASSERT_DEVICE := NX505J,nx505j,cm_NX505J,cm_nx505j,NX505j,jNX505
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -45,7 +45,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12738083840
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 BOARD_VENDOR := zte-qcom
-TARGET_SPECIFIC_HEADER_PATH := device/ZTE/NX505J/include
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -90,7 +89,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
-TARGET_KERNEL_SOURCE := kernel/ZTE/NX505J
+TARGET_KERNEL_SOURCE := kernel/nubia/nx505j
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := cm-NX505J_defconfig
 TARGET_ZTEMT_DTS := true
@@ -143,7 +142,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 EXTENDED_FONT_FOOTPRINT := true
 
 # Ant or qualcomm-uart ?
-#BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Camera
@@ -153,8 +151,6 @@ TARGET_PROVIDES_CAMERA_HAL := true
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_NO_RPC := true
-#TARGET_GPS_HAL_PATH := $(LOCAL_PATH)/gps
-#TARGET_PROVIDES_GPS_LOC_API := true
 
 # CMHW
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
@@ -170,6 +166,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
+BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

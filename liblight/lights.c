@@ -194,12 +194,6 @@ write_str(char const* path, char *value)
 }
 
 static int
-is_lit(struct light_state_t const* state)
-{
-    return state->color & 0x00ffffff;
-}
-
-static int
 rgb_to_brightness(struct light_state_t const* state)
 {
     int color = state->color & 0x00ffffff;
@@ -224,17 +218,9 @@ static int
 set_breath_light_locked(int event_source,
 	struct light_state_t const* state)
 {
-    int len;
-    int blink;
-    int onMS, offMS, ramp;
-    unsigned int colorRGB, event_colorRGB;
-    int brightness, event_brightness;
+    int blink, onMS, offMS, event_brightness;
 
-    event_colorRGB = state->color;
-
-    event_brightness = ((77 * ((event_colorRGB >> 16) & 0xFF)) +
-                      (150 * ((event_colorRGB >> 8) & 0xFF)) +
-                      (29 * (event_colorRGB & 0xFF))) >> 8;
+    event_brightness = rgb_to_brightness(state);
 
     if(event_brightness > 0) {
 	active_states |= event_source;
@@ -243,9 +229,8 @@ set_breath_light_locked(int event_source,
 	ALOGD("[LIGHTS.MSM8974] active_states=%d, last_state=%d, event_source=%d\n", active_states, last_state, event_source);
 	if(active_states == 0) {
 	    ALOGD("[LIGHTS.MSM8974] disabling buttons backlight\n");
-	    write_int(BREATH_LED_BLINK, 0); // just turn led off
-	    write_int(LEFT_BUTTON_BLINK, 0);
-	    write_int(RIGHT_BUTTON_BLINK, 0);
+	    write_int(BREATH_LED_LUT_FLAGS, PM_PWM_LUT_NO_TABLE); // smoothly turn led off
+	    //write_int(BREATH_LED_BLINK, 0); // just turn led off
 	    last_state = BREATH_SOURCE_NONE;
 	    return 0;
 	}
@@ -255,30 +240,21 @@ set_breath_light_locked(int event_source,
       return 0;
     }
 
-    colorRGB = state->color;
-    brightness = ((77 * ((colorRGB >> 16) & 0xFF)) +
-                      (150 * ((colorRGB >> 8) & 0xFF)) +
-                      (29 * (colorRGB & 0xFF))) >> 8;
-    
-    switch (state->flashMode) {
-        case LIGHT_FLASH_TIMED:
-            onMS = state->flashOnMS;
-            offMS = state->flashOffMS;
-            break;
-        case LIGHT_FLASH_NONE:
-        default:
-            onMS = 0;
-            offMS = 0;
-            break;
-    }
-    
-    blink = (onMS+offMS)?1:0;
-
     char* light_template;
     int lut_flags = 0;
+    onMS = 0;
+    offMS = 0;
+
     if(active_states & BREATH_SOURCE_NOTIFICATION) {
         ALOGE("[LIGHTS.MSM8974] Notification");
 	state = &g_notification;
+	if (state->flashMode == LIGHT_FLASH_TIMED) {
+		onMS = state->flashOnMS;
+		offMS = state->flashOffMS;
+	}
+   
+	blink = (onMS+offMS)?1:0;
+
 	light_template = BREATH_LED_BRIGHTNESS_NOTIFICATION;
 	lut_flags = PM_PWM_LUT_RAMP_UP;
 	if(blink) {
@@ -300,7 +276,7 @@ set_breath_light_locked(int event_source,
 	    onMS = 300;
 	    offMS = 1500;
 	} else {
-	    if(capacity < 90) { // see batteryService.java:978
+	    if(capacity < 100) { // see batteryService.java:978
 		// battery charging
 		light_template = BREATH_LED_BRIGHTNESS_CHARGING;
 		lut_flags = PM_PWM_LUT_LOOP|PM_PWM_LUT_RAMP_UP|PM_PWM_LUT_REVERSE;
@@ -317,19 +293,18 @@ set_breath_light_locked(int event_source,
 	last_state = BREATH_SOURCE_BATTERY;
     } else if(active_states & BREATH_SOURCE_BUTTONS) {
         ALOGE("[LIGHTS.MSM8974] Buttons");
-	state = &g_buttons;
-	light_template = BREATH_LED_BRIGHTNESS_BUTTONS;
-	lut_flags = PM_PWM_LUT_RAMP_UP;
 	if(last_state == BREATH_SOURCE_BUTTONS) {
           ALOGE("[LIGHTS.MSM8974] Buttons return 0");
 	  return 0;
 	}
+	state = &g_buttons;
+	light_template = BREATH_LED_BRIGHTNESS_BUTTONS;
+	lut_flags = PM_PWM_LUT_RAMP_UP;
 	last_state = BREATH_SOURCE_BUTTONS;
     } else if(active_states & BREATH_SOURCE_ATTENTION) {
 	ALOGE("[LIGHTS.MSM8974] Attention");
 	state = &g_attention;
-	//light_template = BREATH_LED_BRIGHTNESS_NOTIFICATION;
-	light_template = BREATH_LED_BRIGHTNESS_BUTTONS;
+	light_template = BREATH_LED_BRIGHTNESS_NOTIFICATION;
 	last_state = BREATH_SOURCE_ATTENTION;
     } else {
       last_state = BREATH_SOURCE_NONE;
@@ -340,6 +315,7 @@ set_breath_light_locked(int event_source,
     ALOGD("[LIGHTS.MSM8974] writing values: light_template=%d, pause_lo=%d, pause_hi=%d, lut_flags=%d\n", light_template, offMS, onMS, lut_flags);
 
     write_int(BREATH_LED_BLINK, 0);
+    usleep(20000);
     write_str(BREATH_LED_DUTY_PCTS, light_template);
     write_int(BREATH_LED_RAMP_STEP_MS, (int)20);
     if(offMS > 0)
@@ -347,6 +323,7 @@ set_breath_light_locked(int event_source,
     if(onMS > 0)
 	write_int(BREATH_LED_PAUSE_HI, (int)onMS);
     write_int(BREATH_LED_LUT_FLAGS, lut_flags);
+    usleep(20000);
     write_int(BREATH_LED_BLINK, 1);
     return 0;
 }
@@ -358,12 +335,15 @@ set_light_buttons(struct light_device_t* dev,
     int brightness = rgb_to_brightness(state);
     pthread_mutex_lock(&g_lock);
     g_buttons = *state;
-    write_str(LEFT_BUTTON_DUTY_PCTS, BREATH_LED_BRIGHTNESS_BUTTONS);
-    write_str(RIGHT_BUTTON_DUTY_PCTS, BREATH_LED_BRIGHTNESS_BUTTONS);
-    write_int(LEFT_BUTTON_LUT_FLAGS, PM_PWM_LUT_RAMP_UP);
-    write_int(RIGHT_BUTTON_LUT_FLAGS, PM_PWM_LUT_RAMP_UP);
-    write_int(LEFT_BUTTON_RAMP_STEP_MS, (int)40);
-    write_int(RIGHT_BUTTON_RAMP_STEP_MS, (int)40);
+    if (brightness > 0) {
+	write_str(LEFT_BUTTON_DUTY_PCTS, "0,1,2,3,4,5,6,7,8,9,10");
+	write_str(RIGHT_BUTTON_DUTY_PCTS, "0,1,2,3,4,5,6,7,8,9,10");
+	write_int(LEFT_BUTTON_LUT_FLAGS, PM_PWM_LUT_RAMP_UP);
+	write_int(RIGHT_BUTTON_LUT_FLAGS, PM_PWM_LUT_RAMP_UP);
+	write_int(LEFT_BUTTON_RAMP_STEP_MS, (int)40);
+	write_int(RIGHT_BUTTON_RAMP_STEP_MS, (int)40);
+	usleep(20000);
+    }
     write_int(LEFT_BUTTON_BLINK, brightness?1:0);
     write_int(RIGHT_BUTTON_BLINK, brightness?1:0);
     set_breath_light_locked(BREATH_SOURCE_BUTTONS, &g_buttons);

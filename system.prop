@@ -1,5 +1,5 @@
 #
-# system.prop for nx505j
+# system.prop for NX505J Z7 MAX
 #
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
@@ -20,6 +20,11 @@ persist.radio.rat_on=combine
 ril.subscription.types=NV,RUIM
 ro.ril.enable.amr.wideband=1
 DEVICE_PROVISIONED=1
+persist.radio.rat_on=combine
+persist.radio.multisim.config=dsds
+ro.telephony.default_network=10
+ro.telephony.default_cdma_sub=0
+ro.ril.force_eri_from_xml=true
 
 debug.sf.hw=1
 debug.egl.hw=1
@@ -136,11 +141,6 @@ persist.sys.wifi.softapname=nubia Z7 max
 #device name
 ro.config.devicename=nubia Z7 max
 
-persist.radio.multisim.config=dsds
-ro.telephony.default_network=10
-ro.telephony.default_cdma_sub=0
-ro.ril.force_eri_from_xml=true
-
 #set primary card enabled
 persist.radio.primarycard=false
 
@@ -166,10 +166,8 @@ persist.debug.wfd.enable=1
 #property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
 #property to set wfd output resolution is 1080P(0) / 720P(1) / 960*540(2) / 800*480(3)
-persist.sys.wfd.zte_resolution=2
+persist.sys.wfd.zte_resolution=1
 #property to show wfd sink false(0) / true(1)
 persist.sys.wfd.zsink_support=1
 #property this is device support wfd 1080p output support(true)  not support(false)
 persist.sys.wfd.1080p_support=true
-
-

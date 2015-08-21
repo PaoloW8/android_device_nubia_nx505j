@@ -27,8 +27,10 @@
 
     <!-- Show enabled lte option for lte device -->
     <bool name="config_enabled_lte" translatable="false">false</bool>
+    <bool name="config_show_cdma">false</bool>
     <bool name="config_hardcodeDefaultMobileNetworks">false</bool>
 
+    <bool name="config_uplmn_for_usim">true</bool>
 <!-- Flag whether to enable Proximity setting-->
     <bool name="config_proximity_enable" translatable="false">true</bool>
 

@@ -1,3 +1,3 @@
-add_lunch_combo cm_NX505J-userdebug
-add_lunch_combo cm_NX505J-eng
+add_lunch_combo cm_nx505j-userdebug
+add_lunch_combo cm_nx505j-eng
 

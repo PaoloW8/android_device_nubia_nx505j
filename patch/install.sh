@@ -12,6 +12,7 @@ git apply $patchdir/11.patch
 git apply $patchdir/12.patch
 git apply $patchdir/headset_2.patch
 git apply $patchdir/headset_3.patch
+git apply $patchdir/tilescreenshot_5.patch
 echo " "
 
 cd ../../../..
@@ -22,12 +23,19 @@ git apply $patchdir/10.patch
 git apply $patchdir/headset_1.patch
 git apply $patchdir/headset_4.patch
 git apply $patchdir/3fingers_2.patch
+git apply $patchdir/tilescreenshot_2.patch
 echo " "
 
 cd ..
 cd policy
 echo "Applying Framerworks/policy patch..."
 git apply $patchdir/3fingers_3.patch
+echo " "
+
+cd ..
+cd media
+echo "Applying Framerworks/media patch..."
+git apply $patchdir/volumestep.patch
 echo " "
 
 cd ../../..
@@ -37,6 +45,7 @@ git apply $patchdir/07.patch
 git apply $patchdir/08.patch
 git apply $patchdir/headset_5.patch
 git apply $patchdir/3fingers_1.patch
+git apply $patchdir/tilescreenshot_1.patch
 echo " "
 
 echo "Adding Files if not exist..."
@@ -62,6 +71,16 @@ cd SystemUI
 if [ ! -e res/drawable/stat_sys_headset.xml ]; then
 	git apply $patchdir/headset_6.patch
 	echo "stat_sys_headset.xml added"
+fi
+
+if [ ! -e res/drawable/ic_qs_screenshot.xml ]; then
+	git apply $patchdir/tilescreenshot_3.patch
+	echo "ic_qs_screenshot.xml added"
+fi
+
+if [ ! -e src/com/android/systemui/qs/tiles/ScreenshotTile.java ]; then
+	git apply $patchdir/tilescreenshot_4.patch
+	echo "ScreenshotTile.java added"
 fi
 
 echo " "

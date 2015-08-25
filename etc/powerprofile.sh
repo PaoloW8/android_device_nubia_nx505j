@@ -30,7 +30,7 @@ dev_governor=`ls /sys/class/devfreq/qcom,cpubw*/governor`
                  echo 2457600                              > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
                  echo 2457600                              > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
                  echo 2457600                              > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
-                 echo 2                                    > /sys/devices/system/cpu/sched_mc_power_savings
+                 echo 0                                    > /sys/devices/system/cpu/sched_mc_power_savings
                  echo intelliactive                        > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
                  echo intelliactive                        > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
                  echo intelliactive                        > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor

@@ -1,22 +1,21 @@
 --- media/java/android/media/AudioService.java
 +++ media/java/android/media/AudioService.java
-@@ -274,13 +274,13 @@
+@@ -273,12 +273,12 @@
+ 
     /** @hide Maximum volume index values for audio streams */
      private static int[] MAX_STREAM_VOLUME = new int[] {
-         5,  // STREAM_VOICE_CALL
+-        5,  // STREAM_VOICE_CALL
 -        7,  // STREAM_SYSTEM
 -        7,  // STREAM_RING
 -        15, // STREAM_MUSIC
 -        7,  // STREAM_ALARM
 -        7,  // STREAM_NOTIFICATION
++        10,  // STREAM_VOICE_CALL
 +        14,  // STREAM_SYSTEM
 +        14,  // STREAM_RING
 +        30, // STREAM_MUSIC
 +        14,  // STREAM_ALARM
 +        14,  // STREAM_NOTIFICATION
          15, // STREAM_BLUETOOTH_SCO
--        7,  // STREAM_SYSTEM_ENFORCED
-+        14,  // STREAM_SYSTEM_ENFORCED
+         7,  // STREAM_SYSTEM_ENFORCED
          15, // STREAM_DTMF
-         15  // STREAM_TTS
-     };

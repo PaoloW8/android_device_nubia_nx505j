@@ -21,6 +21,7 @@ bin/rild
 bin/uiautomator
 bin/gpsone_daemon
 bin/tp_node.sh
+bin/garden_app
 
 -lib/libcnefeatureconfig.so
 
@@ -106,7 +107,10 @@ lib/libmorpho_image_converter.so
 lib/libmorpho_jpeg_io.so
 lib/libmorpho_memory_allocator.so
 lib/libmorpho_strobe_photo_jni.so
-
+lib/libcurl_camera.so
+lib/libFNVfbEngineLib.so
+lib/libImageAlogrithm.so
+lib/libSFB.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so

@@ -200,13 +200,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_BOOT_IMG_ONLY := false
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+# dex-preoptimization to speed up first boot sequence
+WITH_DEXPREOPT := false
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

@@ -46,6 +46,7 @@
 #define BREATH_LED_BRIGHTNESS_BUTTONS		"0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
 #define BREATH_LED_BRIGHTNESS_BATTERY		"0,50"
 #define BREATH_LED_BRIGHTNESS_CHARGING		"20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+#define BREATH_LED_SIDE_BUTTONS			"0,1,2,3,4,5,6,7,8,9,10"
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
@@ -262,6 +263,9 @@ set_breath_light_locked(int event_source,
 	}
 	last_state = BREATH_SOURCE_NOTIFICATION;
     } else if(active_states & BREATH_SOURCE_BATTERY) {
+	if (last_state == BREATH_SOURCE_BATTERY) {
+		return 0;
+	}
         ALOGE("[LIGHTS.MSM8974] Battery");
 	state = &g_battery;
 	// can't get battery info from state, getting it from sysfs
@@ -336,8 +340,8 @@ set_light_buttons(struct light_device_t* dev,
     pthread_mutex_lock(&g_lock);
     g_buttons = *state;
     if (brightness > 0) {
-	write_str(LEFT_BUTTON_DUTY_PCTS, "0,1,2,3,4,5,6,7,8,9,10");
-	write_str(RIGHT_BUTTON_DUTY_PCTS, "0,1,2,3,4,5,6,7,8,9,10");
+	write_str(LEFT_BUTTON_DUTY_PCTS, BREATH_LED_SIDE_BUTTONS);
+	write_str(RIGHT_BUTTON_DUTY_PCTS, BREATH_LED_SIDE_BUTTONS);
 	write_int(LEFT_BUTTON_LUT_FLAGS, PM_PWM_LUT_RAMP_UP);
 	write_int(RIGHT_BUTTON_LUT_FLAGS, PM_PWM_LUT_RAMP_UP);
 	write_int(LEFT_BUTTON_RAMP_STEP_MS, (int)40);

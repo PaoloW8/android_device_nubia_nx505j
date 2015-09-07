@@ -267,7 +267,7 @@ case "$target" in
         echo 1 > /sys/module/msm_pm/modes/cpu2/retention/idle_enabled
         echo 1 > /sys/module/msm_pm/modes/cpu3/retention/idle_enabled
         echo 0 > /sys/module/msm_thermal/core_control/enabled
-        echo Y > /sys/module/clock_krait_8974/parameters/boost
+        #echo Y > /sys/module/clock_krait_8974/parameters/boost
         echo 1 > /sys/devices/system/cpu/cpu1/online
         echo 1 > /sys/devices/system/cpu/cpu2/online
         echo 1 > /sys/devices/system/cpu/cpu3/online
@@ -514,6 +514,7 @@ case "$target" in
         start mpdecision
     ;;
     "msm8974")
+        rm /data/system/perfd/default_values
         start mpdecision
         echo 4096 > /sys/block/mmcblk0/bdi/read_ahead_kb
 	sysctl -w net.ipv4.tcp_congestion_control=westwood

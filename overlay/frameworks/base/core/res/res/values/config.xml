@@ -427,4 +427,7 @@
 
     <!-- Is the device LTE capable -->
     <bool name="config_lte_capable">true</bool>
+    
+    <!-- Is the notification LED brightness adjustable ? Used to decide if the user can set LED brightness -->
+    <bool name="config_adjustableNotificationLedBrightness">false</bool>
 </resources>

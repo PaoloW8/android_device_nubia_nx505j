@@ -21,7 +21,7 @@ bin/rild
 bin/uiautomator
 bin/gpsone_daemon
 bin/tp_node.sh
-bin/garden_app
+#bin/garden_app
 
 -lib/libcnefeatureconfig.so
 
@@ -30,6 +30,7 @@ lib/libqsap_sdk.so
 -app/uei_sdk/uei_sdk.apk
 -app/ZTE_IRControl/ZTE_IRControl.apk
 lib/libBlurEffect.so
+lib/libnubia_runtime.so
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk

@@ -282,10 +282,10 @@ case "$target" in
                 do
                     echo "cpubw_hwmon" > $devfreq_gov
                 done
-                echo "intelliactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-                echo "intelliactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-                echo "intelliactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-                echo "intelliactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
                 echo "20000 1400000:40000 1700000:20000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
                 echo 20 > /sys/module/cpu_boost/parameters/boost_ms
                 echo 1728000 > /sys/module/cpu_boost/parameters/sync_threshold
@@ -326,7 +326,7 @@ case "$target" in
         chmod -h 664 /sys/devices/system/cpu/cpu1/online
         chmod -h 664 /sys/devices/system/cpu/cpu2/online
         chmod -h 664 /sys/devices/system/cpu/cpu3/online
-        echo 1 > /dev/cpuctl/apps/cpu.notify_on_migrate
+        echo 1 > /dev/cpuctl/cpu.notify_on_migrate
     ;;
 esac
 
@@ -520,7 +520,7 @@ case "$target" in
 	sysctl -w net.ipv4.tcp_congestion_control=westwood
     ;;
     "apq8084")
-        rm /data/system/default_values
+        rm /data/system/perfd/default_values
         start mpdecision
         echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
         echo 512 > /sys/block/sda/bdi/read_ahead_kb

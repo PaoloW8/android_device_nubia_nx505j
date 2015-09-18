@@ -241,14 +241,12 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.nubia.sh \
     init.nubia.usb.rc \
-    init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.factory.sh \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.qcom.sh \
     init.qcom.ssr.sh \
-    init.qcom.syspart_fixup.sh \
     init.qcom.usb.sh \
     init.target.rc \
     init.trace.rc \
@@ -335,7 +333,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     $(LOCAL_PATH)/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     $(LOCAL_PATH)/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    $(LOCAL_PATH)/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
     $(LOCAL_PATH)/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml \
     $(LOCAL_PATH)/etc/qca6234-service.sh:system/etc/qca6234-service.sh \
     $(LOCAL_PATH)/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \

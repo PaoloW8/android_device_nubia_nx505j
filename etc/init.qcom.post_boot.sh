@@ -282,10 +282,10 @@ case "$target" in
                 do
                     echo "cpubw_hwmon" > $devfreq_gov
                 done
-                echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-                echo "interactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-                echo "interactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-                echo "interactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+                echo "intelliactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+                echo "intelliactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+                echo "intelliactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+                echo "intelliactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
                 echo "20000 1400000:40000 1700000:20000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
                 echo 20 > /sys/module/cpu_boost/parameters/boost_ms
                 echo 1728000 > /sys/module/cpu_boost/parameters/sync_threshold

@@ -84,7 +84,7 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 # Kernel
 KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-gnueabihf-linaro_4.9/bin/arm-cortex_a15-linux-gnueabihf-
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -177,18 +177,18 @@ BOARD_USES_QC_TIME_SERVICES := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 
 # Wifi
-TARGET_USES_WCNSS_CTRL := true
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
-WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
+TARGET_USES_WCNSS_CTRL := true
 TARGET_USES_QCOM_WCNSS_QMI := true
 TARGET_PROVIDES_WCNSS_QMI := true
 
@@ -205,7 +205,35 @@ WITH_DEXPREOPT := false
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/nubia/nx505j/sepolicy
 
-BOARD_SEPOLICY_DIRS += \
-        $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_UNION += \
+    debuggerd.te \
+    dnsmasq.te \
+    file.te \
+    file_contexts \
+    healthd.te \
+    installd.te \
+    kernel.te \
+    keystore.te \
+    mediaserver.te \
+    mpdecision.te \
+    netd.te \
+    platform_app.te \
+    property.te \
+    property_contexts \
+    radio.te \
+    rmt_storage.te \
+    sensors.te \
+    servicemanager.te \
+    shell.te \
+    sysinit.te \
+    system_app.te \
+    system_server.te \
+    tee.te \
+    thermal-engine.te \
+    ueventd.te \
+    untrusted_app.te \
+    wcnss_service.te \
+    wpa.te
 

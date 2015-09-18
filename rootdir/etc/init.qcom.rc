@@ -540,9 +540,6 @@ service usbhub_init /system/bin/usbhub_init
    disabled
    oneshot
 
-service qcomsysd /system/bin/qcom-system-daemon
-    class main
-
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
 
@@ -957,12 +954,6 @@ service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
     class late_start
     user root
     disabled
-    oneshot
-
-service usb_uicc_daemon /system/bin/usb_uicc_client
-    class main
-    user system
-    group system log
     oneshot
 
 on property:usb_uicc.enabled=1

@@ -19,3 +19,6 @@ allow system_app fastcharge_sysfs:file rw_file_perms;
 
 # advanced settings
 allow system_app boost_sysfs:file rw_file_perms;
+
+#allow system_app device:chr_file { read write ioctl open getattr };
+allow system_app system_app_data_file:file execute;

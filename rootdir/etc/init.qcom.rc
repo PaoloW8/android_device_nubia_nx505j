@@ -252,11 +252,13 @@ on boot
 	chown system system /sys/class/leds/red/pwm_us
 	chmod 0666 /sys/class/leds/red/pwm_us
 
-    chown system system /sys/class/input/input0/wakeup_gesture
+    	chown system system /sys/class/input/input0/wakeup_gesture
 	chmod 0666 /sys/class/input/input0/wakeup_gesture
-    chown system system /sys/bus/ttsp4/devices/main_ttsp_core.cyttsp4_i2c_adapter/easy_wakeup_gesture
+    	chown system system /sys/bus/ttsp4/devices/main_ttsp_core.cyttsp4_i2c_adapter/easy_wakeup_gesture
 	chmod 0666 /sys/bus/ttsp4/devices/main_ttsp_core.cyttsp4_i2c_adapter/easy_wakeup_gesture
-	
+	chown system system /sys/devices/gpio_keys.85/disabled_keys	
+	chmod 0666 /sys/devices/gpio_keys.85/disabled_keys	
+
 	#lcd enhance
 	chown system system /sys/kernel/lcd_enhance/disptype
 	chmod 0666 /sys/kernel/lcd_enhance/disptype
@@ -284,18 +286,18 @@ on boot
 	chmod 0666  /sys/module/mdss_dsi_ctrl/kgamma_send
 	chmod 0666  /sys/module/mdss_dsi_ctrl/kgamma_w
     # Torch
-    chown system camera /sys/class/leds/led:flash_torch/brightness
-    chmod 0660 /sys/class/leds/led:flash_torch/brightness  
+    	chown system camera /sys/class/leds/led:flash_torch/brightness
+    	chmod 0660 /sys/class/leds/led:flash_torch/brightness  
     
 # ADDED BY ZTEMT ZhuBing
 	chown root system /sys/class/leds/red/brightness
 	chmod 0666 /sys/class/leds/red/brightness
 	chown root system /sys/class/leds/red/max_brightness
 	chmod 0666 /sys/class/leds/red/max_brightness
-    chown system system /sys/class/leds/red/fade_parameter
-    chown system system /sys/class/leds/red/grade_parameter
-    chown system system /sys/class/leds/red/outn
-    chown system system /sys/class/leds/red/brightness
+	chown system system /sys/class/leds/red/fade_parameter
+    	chown system system /sys/class/leds/red/grade_parameter
+    	chown system system /sys/class/leds/red/outn
+    	chown system system /sys/class/leds/red/brightness
     
     chown system system /sys/kernel/lcd_enhance/saturation
     chmod 0666 /sys/kernel/lcd_enhance/saturation

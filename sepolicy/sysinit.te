@@ -1,2 +1,2 @@
-#allow sysinit block_device:blk_file { write read open };
-allow sysinit default_prop:property_service set;
+#============= sysinit ==============
+allow sysinit swap_block_device:blk_file { read write getattr open };

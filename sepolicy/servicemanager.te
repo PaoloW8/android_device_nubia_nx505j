@@ -1,3 +1,8 @@
-allow servicemanager init_shell:dir search;
-allow servicemanager init_shell:file { read open };
-allow servicemanager init_shell:process getattr; 
+#============= servicemanager ==============
+allow servicemanager kernel:system module_request;
+allow servicemanager zygote:dir search;
+allow servicemanager zygote:file { read open };
+allow servicemanager zygote:process getattr;
+allow servicemanager qti_init_shell:dir search;
+allow servicemanager qti_init_shell:file { read open };
+allow servicemanager qti_init_shell:process getattr;

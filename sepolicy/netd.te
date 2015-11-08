@@ -1,1 +1,2 @@
-allow netd self:capability fsetid; 
+#============= netd ==============
+allow netd kernel:system module_request;

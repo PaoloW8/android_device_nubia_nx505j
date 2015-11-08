@@ -1,0 +1,2 @@
+#============= perfprofd ==============
+allow perfprofd kernel:system module_request;

@@ -1,0 +1,27 @@
+#============= toolbox ==============
+allow toolbox bluetooth_prop:property_service set;
+allow toolbox ctl_default_prop:property_service set;
+allow toolbox ctl_rildaemon_prop:property_service set;
+allow toolbox init:fifo_file { write getattr };
+allow toolbox init:unix_stream_socket connectto;
+allow toolbox kernel:system module_request;
+allow toolbox property_socket:sock_file write;
+allow toolbox system_prop:property_service set;
+allow toolbox self:capability { chown dac_override };
+allow toolbox sysfs:file setattr;
+allow toolbox system_data_file:dir { write create add_name setattr };
+allow toolbox system_data_file:lnk_file create;
+allow toolbox unlabeled:dir getattr;
+allow toolbox unlabeled:file { getattr setattr };
+#allow toolbox default_prop:property_service set;
+#allow toolbox device:chr_file { read write };
+allow toolbox init:fifo_file read;
+allow toolbox proc_net:file write;
+allow toolbox sysfs_devices_system_cpu:file setattr;
+allow toolbox system_data_file:dir remove_name;
+#allow toolbox system_data_file:file { write unlink };
+allow toolbox system_data_file:lnk_file unlink;
+#allow toolbox block_device:blk_file { read ioctl open };
+#allow toolbox default_prop:property_service set;
+allow toolbox kernel:process setsched;
+#allow toolbox labeledfs:filesystem remount;

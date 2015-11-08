@@ -1,1 +1,2 @@
-allow installd location_app_data_file:file { getattr open read };
+#============= installd ==============
+allow installd kernel:system module_request;

@@ -1,29 +1,30 @@
-bin/cnd
+#bin/cnd
 bin/fm_qsoc_patches
 bin/fmconfig
-bin/hvdcp
-bin/ims_rtp_daemon
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/poad
-bin/ptt_socket_app
-bin/sapd
-bin/wdsdaemon
+#bin/hvdcp
+#bin/ims_rtp_daemon
+#bin/imsdatadaemon
+#bin/imsqmidaemon
+#bin/poad
+#bin/ptt_socket_app
+#bin/sapd
+#bin/wdsdaemon
 bin/mpdecision
-bin/imscmservice
-bin/ml_daemon
-bin/ks
+#bin/imscmservice
+#bin/ml_daemon
+#bin/ks
 bin/perfd
 bin/pfm
-bin/rild
+#bin/rild
 bin/uiautomator
 bin/gpsone_daemon
 bin/tp_node.sh
 bin/garden_app
 
--lib/libcnefeatureconfig.so
+lib/libcnefeatureconfig.so
+#lib/libstlport.so
 
-lib/libqsap_sdk.so
+#lib/libqsap_sdk.so
 
 -app/uei_sdk/uei_sdk.apk
 -app/ZTE_IRControl/ZTE_IRControl.apk
@@ -48,7 +49,7 @@ vendor/lib/hw/activity_recognition.msm8974.so
 
 # Time services
 bin/time_daemon
-app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk
 
 # ACDB data
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
@@ -86,6 +87,7 @@ bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8974.so:lib/hw/camera.msm8974.so
 lib/libqomx_core.so
+lib/libOmxVdecHevc.so
 lib/libchromatix_imx135_069_liveshot.so
 lib/libchromatix_imx135_front_liveshot.so
 lib/libchromatix_imx135_gbao_lc898122_liveshot.so
@@ -117,6 +119,14 @@ vendor/lib/egl/libq3dtools_adreno.so
 
 # DRM
 bin/qseecomd
+#hammerhead MM
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libdrmdecrypt.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
+vendor/lib/libWVphoneAPI.so
+vendor/lib/libWVStreamControlAPI_L1.so
 
 # Audio
 vendor/lib/soundfx/libqcbassboost.so
@@ -146,14 +156,14 @@ bin/qmuxd
 bin/radish
 bin/rfs_access
 bin/rmt_storage
-lib/libmdmdetect.so
-lib/libril.so
-lib/libreference-ril.so
-lib/librilutils.so
+-lib/libmdmdetect.so
+#lib/libril.so
+#lib/libreference-ril.so
+#lib/librilutils.so
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
-framework/qcnvitems.jar
-framework/qcrilhook.jar
+-framework/qcnvitems.jar
+-framework/qcrilhook.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk
 
@@ -164,9 +174,6 @@ vendor/lib/hw/sensors.msm8974.so
 
 # Thermal
 bin/thermal-engine
-
-# ZTE additional settings
-#-app/Additional/Additional.apk
 
 # NFC
 #lib/hw/nfc_nci.bcm2079x.default.so
@@ -417,17 +424,20 @@ vendor/lib/libchromatix_t4k35_common.so
 vendor/lib/libchromatix_t4k35_default_video.so
 vendor/lib/libchromatix_t4k35_preview.so
 vendor/lib/libchromatix_t4k35_zsl.so
+vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
+vendor/lib/libcneconn.so
+vendor/lib/libcneqmiutils.so
 vendor/lib/libCommandSvc.so
 vendor/lib/libconfigdb.so
-vendor/lib/libdiag.so
+-vendor/lib/libdiag.so
 vendor/lib/libDivxDrm.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libdsi_netctrl.so
-vendor/lib/libdsutils.so
+-vendor/lib/libdsutils.so
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
@@ -436,12 +446,14 @@ vendor/lib/libgeofence.so
 vendor/lib/libgsl.so
 -vendor/lib/libHevcSwDecoder.so
 vendor/lib/libI420colorconvert.so
-vendor/lib/libidl.so
+-vendor/lib/libidl.so
 vendor/lib/lib-imscamera.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
 vendor/lib/lib-imsrcscmservice.so
 vendor/lib/lib-imsrcs.so
+vendor/lib/lib-imsrcscm.so
+vendor/lib/lib-imsrcscmclient.so
 vendor/lib/lib-imsSDP.so
 vendor/lib/lib-imss.so
 vendor/lib/lib-imsvt.so
@@ -550,15 +562,17 @@ vendor/lib/libprofiler_msmadc.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
+-vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
-vendor/lib/libqmi_client_qmux.so
+-vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqmi_encdec.so
-vendor/lib/libqmiservices.so
-vendor/lib/libqmi.so
+-vendor/lib/libqmiservices.so
+-vendor/lib/libqmi_client_qmux.so
+-vendor/lib/libqcci_legacy.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libQSEEComAPI.so

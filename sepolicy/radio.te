@@ -1,5 +1,3 @@
-allow radio ztehw_sysfs:file { read getattr open };
-allow radio touchtune_sysfs:file { read getattr open write };
+#============= radio ==============
+#allow radio socket_device:sock_file write;
 
-# rfs_access needs this
-allow radio system_app_data_file:dir search;

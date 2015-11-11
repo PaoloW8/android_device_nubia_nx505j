@@ -150,13 +150,6 @@ service audiod /system/bin/audiod
    user system
    group system
 
-service imsdatadaemon /system/bin/imsdatadaemon
-    class main
-    user system
-    socket ims_datad stream 0660 system radio
-    group system wifi radio inet net_raw log qcom_diag net_admin
-    disabled
-
 service wcnss-service /system/bin/wcnss_service
     class main
     user system
@@ -171,11 +164,11 @@ service pfm /system/bin/pfm
 on charger
     trigger ffbm
 
-service set_softkey /system/bin/set_softkey.sh
-    user root
-    oneshot
-    disabled
+#service set_softkey /system/bin/set_softkey.sh
+#    user root
+#    oneshot
+#    disabled
 
-on property:softkey.change=1
-    start set_softkey
+#on property:softkey.change=1
+#    start set_softkey
 

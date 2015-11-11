@@ -28,8 +28,8 @@
 on init
     write /sys/class/android_usb/android0/f_rndis/wceis 1
 
-on charger
-    setprop sys.usb.config adb
+#on charger
+#    setprop sys.usb.config adb
 
 on fs
     mkdir /dev/usb-ffs 0770 shell shell
@@ -284,5 +284,6 @@ on property:sys.usb.config=charging,adb
     write /sys/class/android_usb/android0/idProduct FFC1
     write /sys/class/android_usb/android0/functions qdss,adb
     write /sys/class/android_usb/android0/enable 1
+    start adbd
     setprop sys.usb.state ${sys.usb.config}
 

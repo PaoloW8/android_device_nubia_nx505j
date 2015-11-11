@@ -3,7 +3,7 @@
 #
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
-persist.sys.usb.config=mtp,adb
+persist.sys.usb.config=adb
 
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
@@ -27,6 +27,7 @@ ro.telephony.default_cdma_sub=0
 ro.ril.force_eri_from_xml=true
 persist.radio.apm_sim_not_pwdn=1
 ro.telephony.ril.config=simactivation
+persist.data.qmi.adb_logmask=0
 
 debug.sf.hw=1
 debug.egl.hw=1
@@ -104,7 +105,7 @@ ro.bluetooth.alwaysbleon=true
 
 #Simulate sdcard on /data/media
 #
-persist.fuse_sdcard=true
+#persist.fuse_sdcard=true
 
 #
 #snapdragon value add features

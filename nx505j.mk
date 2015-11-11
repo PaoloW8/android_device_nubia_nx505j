@@ -127,10 +127,6 @@ PRODUCT_PACKAGES += \
 
 # Filesystem
 PRODUCT_PACKAGES += \
-    e2fsck \
-    fibmap.f2fs \
-    fsck.f2fs \
-    mkfs.f2fs \
     make_ext4fs \
     resize2fs \
     setup_fs
@@ -313,11 +309,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libion
-
-PRODUCT_PACKAGES += \
-    ntfs-3g \
-    ntfsfix \
-    mkntfs
 
 PRODUCT_PACKAGES += \
     LatinIME \

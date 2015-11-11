@@ -7,6 +7,7 @@
                        <CHINA_UNICOM>  2
                        <CHINA_TELECOM> 3
                        <CM_CU_CHANNEL> 4],
+
         [mobilepattern  <DSDS>         0
                         <DSDA>         1
                         <TSTS>         2
@@ -31,7 +32,7 @@
 <ap-config version="1">
   <config  custom="0"
            mobilepattern="0"
-           ims="1"
+           ims="0"
            srlte="1"
            mbn="1"
   />

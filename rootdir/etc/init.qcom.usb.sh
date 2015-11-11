@@ -101,19 +101,20 @@ echo 1 > /sys/class/android_usb/f_mass_storage/lun1/nofua
 usb_config=`getprop persist.sys.usb.config`
 build_type=`getprop ro.build.type`
 
-case "$usb_config" in
-    "" | "adb" | "none") #USB persist config not set, select default configuration
-      case "$build_type" in
-          "eng" | "userdebug")
-             setprop persist.sys.usb.config nubia,adb
-           ;;
-          *) 	
-            setprop persist.sys.usb.config nubia
-           ;;
-      esac
-     ;;
-	  * ) ;; #USB persist config exists, do nothing
-esac	 		
+#case "$usb_config" in
+#    "" | "adb" | "none") #USB persist config not set, select default configuration
+#      case "$build_type" in
+#          "eng" | "userdebug")
+#             setprop persist.sys.usb.config nubia,adb
+#           ;;
+#          *) 	
+#            setprop persist.sys.usb.config nubia
+#           ;;
+#      esac
+#     ;;
+#	  * ) ;; #USB persist config exists, do nothing
+#esac	 		
+
 #
 # Add support for exposing lun0 as cdrom in mass-storage
 #

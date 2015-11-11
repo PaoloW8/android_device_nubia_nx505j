@@ -333,12 +333,6 @@
          will not debounce light sensor readings -->
     <!--integer name="config_lightSensorWarmupTime">1000</integer-->
 
-    <!-- Default value for proximity check on screen wake
-         NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
-    -->
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">200</integer>
-
     <!-- Control the behavior when the user short presses the power button.
             0 - Nothing
             1 - Go to sleep (doze)

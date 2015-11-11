@@ -21,7 +21,7 @@ bin/gpsone_daemon
 bin/tp_node.sh
 bin/garden_app
 
-lib/libcnefeatureconfig.so
+#lib/libcnefeatureconfig.so
 #lib/libstlport.so
 
 #lib/libqsap_sdk.so

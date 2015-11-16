@@ -119,7 +119,7 @@ vendor/lib/egl/libq3dtools_adreno.so
 
 # DRM
 bin/qseecomd
-#hammerhead MM
+#blobs from hammerhead MM
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libdrmdecrypt.so
@@ -555,7 +555,7 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libOpenCL.so
+#vendor/lib/libOpenCL.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libpfecommon.so
 vendor/lib/libprofiler_msmadc.so

@@ -90,8 +90,6 @@ ro.qualcomm.cabl=0
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
 telephony.lteOnCdmaDevice=1
-ril.ecclist=112,911,110,122,119,120,000,118
-ril.ecclist1=112,911,110,122,119,120,000,118
 
 #
 # System props for bluetooth

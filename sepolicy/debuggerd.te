@@ -1,2 +1,3 @@
 #============= debuggerd ==============
 allow debuggerd kernel:system module_request;
+allow debuggerd gpu_device:chr_file r_file_perms;

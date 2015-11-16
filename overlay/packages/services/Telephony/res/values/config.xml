@@ -30,6 +30,9 @@
     <bool name="config_show_cdma">false</bool>
     <bool name="config_hardcodeDefaultMobileNetworks">false</bool>
 
+    <!-- Show enabled tdscdma option for device -->
+    <bool name="config_support_tdscdma" translatable="false">true</bool>
+
     <!-- Show APN Settings for some CDMA carriers -->
     <bool name="config_show_apn_setting_cdma">true</bool>
 

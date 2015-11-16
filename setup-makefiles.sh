@@ -164,9 +164,9 @@ PRODUCT_PACKAGES += \\
     shutdownlistener \\
     qcrilmsgtunnel \\
     qcnvitems \\
-    qcrilhook
+    qcrilhook \\
+    TimeService
 #    com.qualcomm.location \\
-#    TimeService \\
 
 PRODUCT_PACKAGES += \\
     libqmi \\
@@ -271,15 +271,15 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 include \$(BUILD_PREBUILT)
 
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := TimeService
-#LOCAL_MODULE_OWNER := $VENDOR
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
-#LOCAL_CERTIFICATE := platform
-#LOCAL_MODULE_CLASS := APPS
-#LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-#include \$(BUILD_PREBUILT)
+include \$(CLEAR_VARS)
+LOCAL_MODULE := TimeService
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff

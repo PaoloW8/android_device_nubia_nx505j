@@ -149,7 +149,7 @@
          Empty is viewed as "all". Only used on devices which
          don't support RIL_REQUEST_GET_RADIO_CAPABILITY
          format is UMTS|LTE|... -->
-    <string translatable="false" name="config_radio_access_family">GSM|WCDMA|LTE|CDMA|EVDO</string>
+    <string translatable="false" name="config_radio_access_family">GPRS|EDGE|UMTS|HSDPA|HSUPA|HSPA|LTE|HSPAP|GSM|TD_SCDMA|WCDMA|LTE_CA</string>
 
     <!-- If the DUN connection for this CDMA device supports more than just DUN -->
     <!-- traffic you should list them here. -->
@@ -215,12 +215,14 @@
         <item>"mobile_ia,14,0,2,-1,true"</item>
         <item>"bluetooth,7,7,2,-1,true"</item>
         <item>"ethernet,9,9,9,-1,true"</item>
+	<item>"mobile_emergency,15,0,2,-1,true</item>
     </string-array>
 
     <string-array translatable="false" name="radioAttributes">
         <item>"1,1"</item>
         <item>"0,1"</item>
         <item>"7,1"</item>
+        <item>"9,1"</item>
     </string-array>
 
     <!-- MMS user agent string -->
@@ -338,15 +340,15 @@
             1 - Go to sleep (doze)
             2 - Really go to sleep (don't doze)
             3 - Really go to sleep and go home (don't doze)
-    -->
-    <integer name="config_shortPressOnPowerBehavior">2</integer>
+    
+    <integer name="config_shortPressOnPowerBehavior">2</integer> -->
 
     <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
          if the sensor HAL correctly handles the proximity sensor as a wake-up source.
          Otherwise, the device may fail to wake out of suspend reliably.
-         The default is false. -->
-    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+         The default is false. 
+    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool> -->
 
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>

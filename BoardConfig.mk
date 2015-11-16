@@ -22,12 +22,8 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 	frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl \
 	frameworks/base/data/keyboards/Generic.kcm:system/usr/keychars/Generic.kcm, $(PRODUCT_COPY_FILES))
 
-#Disable memcpy_base.S optimization
-#TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
-#COMMON_GLOBAL_CFLAGS += -DQCOM_MEDIA_DISABLE_BUFFER_SIZE_CHECK
 
 # QCRIL
-#BOARD_PROVIDES_LIBRIL := true
 TARGET_RIL_VARIANT := caf
 SIM_COUNT := 2
 TARGET_GLOBAL_CFLAGS += -DANDROID_MULTI_SIM
@@ -68,10 +64,6 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
-# Flags
-#TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
-#TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
-
 # Krait optimizations
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION:= true
 TARGET_USE_KRAIT_PLD_SET := true
@@ -88,7 +80,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
-TARGET_KERNEL_SOURCE := kernel/nubia/nx505j_mm
+TARGET_KERNEL_SOURCE := kernel/nubia/nx505j
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := cm-nx505j_defconfig
 TARGET_ZTEMT_DTS := true
@@ -127,8 +119,8 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_QCOM_BSP := true
 BOARD_USES_OPENSSL_SYMBOLS := true
-
-#TARGET_USE_ION_COMPAT := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -149,10 +141,8 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
-#TARGET_PROVIDES_CAMERA_HAL := true
 
-# GPS
-#BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+# RPC
 TARGET_NO_RPC := true
 
 # CMHW
@@ -164,9 +154,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Webkit
-#TARGET_FORCE_CPU_UPLOAD := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true

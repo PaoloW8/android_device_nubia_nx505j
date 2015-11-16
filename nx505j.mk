@@ -127,9 +127,7 @@ PRODUCT_PACKAGES += \
 
 # Filesystem
 PRODUCT_PACKAGES += \
-    make_ext4fs \
-    resize2fs \
-    setup_fs
+    make_ext4fs 
 
 # FM
 #PRODUCT_PACKAGES += \
@@ -158,10 +156,6 @@ PRODUCT_PACKAGES += \
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8974
-
-# Copy the qcril.db file from qcril to system. Useful to get the radio tech family for the camped operator
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/etc/qcril.db:system/etc/ril/qcril.db
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -257,7 +251,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.target.rc \
     init.trace.rc \
-    init.usb.rc \
     ueventd.qcom.rc \
     ueventd.rc
 

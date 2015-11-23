@@ -1,4 +1,0 @@
-#============= surfaceflinger ==============
-allow surfaceflinger device:chr_file ioctl;
-allow surfaceflinger kernel:system module_request;
-

@@ -1,3 +1,4 @@
 #============= system_app ==============
-allow system_app system_app_data_file:file execute;
 allow system_app device:chr_file { ioctl getattr };
+allow system_app system_app_data_file:file execute;
+allow system_app ir_device:chr_file { ioctl getattr read write open };

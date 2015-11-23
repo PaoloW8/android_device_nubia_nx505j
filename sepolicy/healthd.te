@@ -1,2 +1,0 @@
-#============= healthd ==============
-allow healthd kernel:system module_request;

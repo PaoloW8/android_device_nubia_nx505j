@@ -31,6 +31,9 @@ on early-init
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
 
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+
 on init
     # Set the property to indicate type of virtual display to 0
     # 0 indicates that virtual display is not a Wifi display and that the

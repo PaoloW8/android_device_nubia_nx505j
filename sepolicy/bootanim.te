@@ -1,3 +1,0 @@
-#============= bootanim ==============
-allow bootanim kernel:system module_request;
-

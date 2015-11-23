@@ -1,2 +1,0 @@
-#============= gatekeeperd ==============
-allow gatekeeperd kernel:system module_request;

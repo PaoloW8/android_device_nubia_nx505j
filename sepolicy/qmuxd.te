@@ -1,4 +1,0 @@
-#============= qmuxd ==============
-allow qmuxd devpts:chr_file { read write };
-allow qmuxd self:capability fsetid;
-allow qmuxd untrusted_app_devpts:chr_file { read write };

@@ -1,3 +1,0 @@
-#============= fsck ==============
-allow fsck kernel:system module_request;
-

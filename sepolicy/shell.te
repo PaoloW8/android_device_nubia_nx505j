@@ -1,2 +1,0 @@
-#============= shell ==============
-allow shell kernel:system module_request;

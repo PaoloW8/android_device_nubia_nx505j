@@ -1,5 +1,0 @@
-#============= rild ==============
-allow rild socket_device:dir { write add_name };
-allow rild socket_device:sock_file { write create setattr };
-allow rild devpts:chr_file { read write getattr ioctl };
-allow rild untrusted_app_devpts:chr_file { read write };

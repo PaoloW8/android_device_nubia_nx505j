@@ -1,0 +1,2 @@
+/dev/ttyHSL1                            u:object_r:ir_device:s0
+/dev/bcm2079x				u:object_r:bcmnfc_device:s0

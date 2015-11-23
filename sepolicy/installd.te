@@ -1,2 +1,0 @@
-#============= installd ==============
-allow installd kernel:system module_request;

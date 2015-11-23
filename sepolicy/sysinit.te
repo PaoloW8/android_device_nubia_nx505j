@@ -1,2 +1,0 @@
-#============= sysinit ==============
-allow sysinit swap_block_device:blk_file { read write getattr open };

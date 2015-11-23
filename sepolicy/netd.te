@@ -1,2 +1,0 @@
-#============= netd ==============
-allow netd kernel:system module_request;

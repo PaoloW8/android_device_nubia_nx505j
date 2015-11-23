@@ -1,6 +1,0 @@
-#============= mediaserver ==============
-#allow mediaserver device:chr_file { read write ioctl open };
-allow mediaserver camera_data_file:sock_file write;
-#allow mediaserver device:chr_file { read write ioctl open };
-allow mediaserver init:unix_dgram_socket sendto;
-allow mediaserver socket_device:sock_file write;

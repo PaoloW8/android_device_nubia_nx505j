@@ -30,3 +30,6 @@ extern "C" int _ZN7android6Parcel13writeString16EPKtj() {
 
 extern "C" void RIL_register_socket() {}
 
+/* for nubia camera stock app */
+extern "C" void _ZN8SkBitmap9setConfigENS_6ConfigEiij11SkAlphaType() {}
+

@@ -1,3 +1,2 @@
 #============= ueventd ==============
-allow ueventd kernel:system module_request;
 allow ueventd vfat:file { read getattr open };

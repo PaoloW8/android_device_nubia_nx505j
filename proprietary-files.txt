@@ -226,6 +226,7 @@ vendor/lib/libbtnv.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30-a4xx.so
+vendor/lib/libc2d30.so
 vendor/lib/libCB.so
 vendor/lib/libchromatix_imx132_common.so
 vendor/lib/libchromatix_imx132_default_video.so
@@ -431,14 +432,14 @@ vendor/lib/libcneqmiutils.so
 vendor/lib/libCommandSvc.so
 vendor/lib/libconfigdb.so
 -vendor/lib/libdiag.so
-#vendor/lib/libDivxDrm.so
+vendor/lib/libDivxDrm.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libdsi_netctrl.so
 -vendor/lib/libdsutils.so
-#vendor/lib/libExtendedExtractor.so
+vendor/lib/libExtendedExtractor.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libFileMux.so
@@ -539,8 +540,8 @@ vendor/lib/libmmipstreamnetwork.so
 vendor/lib/libmmipstreamsourcehttp.so
 vendor/lib/libmmipstreamutils.so
 vendor/lib/libmmjpeg.so
-#vendor/lib/libmmosal.so
-#vendor/lib/libmmparser.so
+vendor/lib/libmmosal.so
+vendor/lib/libmmparser.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmQSM.so
 vendor/lib/libmmrtpdecoder.so
@@ -600,7 +601,7 @@ vendor/lib/libsecureuisvc_jni.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-#vendor/lib/libSHIMDivxDrm.so
+vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libsmemlog.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so

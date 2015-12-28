@@ -167,11 +167,11 @@ service pfm /system/bin/pfm
 on charger
     trigger ffbm
 
-#service set_softkey /system/bin/set_softkey.sh
-#    user root
-#    oneshot
-#    disabled
+service set_softkey /system/bin/set_softkey.sh
+    user root
+    oneshot
+    disabled
 
-#on property:softkey.change=1
-#    start set_softkey
+on property:softkey.change=1
+    start set_softkey
 

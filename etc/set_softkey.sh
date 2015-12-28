@@ -2,11 +2,11 @@
 # Copyright (c) 2015 PaoloW8
 
 sleep 2
-softkey=`settings get secure dev_force_show_navbar`
+softkey=`sqlite3 /data/data/org.cyanogenmod.cmsettings/databases/cmsettings.db "select value FROM secure WHERE name='dev_force_show_navbar'"`
 file="/system/usr/keylayout/Generic.kl"
 to_do="$(cat $file | grep "key 102   HOME" | cut -b1)"
 
-mount -o rw,remount /system
+mount -o remount,rw /system
 
 case "$softkey" in
 	"0")
@@ -27,7 +27,7 @@ case "$softkey" in
 		;;
 esac
 
-mount -o ro,remount /system
+mount -o remount,ro /system
 
 setprop softkey.change 0
 

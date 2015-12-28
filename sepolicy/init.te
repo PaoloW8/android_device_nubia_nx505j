@@ -7,3 +7,4 @@ allow init sysfs_mpdecision:file getattr;
 allow init system_data_file:fifo_file write;
 #allow init system_file:file execute_no_trans;
 allow init thermal_device:chr_file { write ioctl };
+allow init system_app_data_file:file lock;

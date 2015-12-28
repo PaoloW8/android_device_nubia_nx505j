@@ -1,0 +1,9 @@
+#============= toolbox ==============
+allow toolbox block_device:blk_file { ioctl };
+#allow toolbox default_prop:property_service set;
+allow toolbox init:fifo_file { read write getattr };
+allow toolbox init:unix_stream_socket connectto;
+allow toolbox kernel:process setsched;
+#allow toolbox labeledfs:filesystem remount;
+allow toolbox property_socket:sock_file write;
+allow toolbox storage_file:dir getattr;

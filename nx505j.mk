@@ -231,8 +231,8 @@ PRODUCT_PACKAGES += \
     power.msm8974
 
 #enable/disable softkey script
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \

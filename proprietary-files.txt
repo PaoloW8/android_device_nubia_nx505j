@@ -48,7 +48,7 @@ vendor/lib/hw/activity_recognition.msm8974.so
 
 # Time services
 bin/time_daemon
-app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk
 
 # ACDB data
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb

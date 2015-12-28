@@ -141,6 +141,9 @@ PRODUCT_PACKAGES += \
     qcom.fmradio \
     qcom.fmradio.xml
 
+# Dot View Case
+PRODUCT_PACKAGES += Dotcase
+
 # keyhandler
 PRODUCT_PACKAGES += \
     com.cyanogenmod.keyhandler

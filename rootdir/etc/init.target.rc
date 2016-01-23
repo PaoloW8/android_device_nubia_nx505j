@@ -60,7 +60,7 @@ on boot
     insmod /system/lib/modules/adsprpc.ko
 
     # exFAT kernel module
-    insmod /system/lib/modules/exfat.ko
+    #insmod /system/lib/modules/exfat.ko
 
 # access permission for secure touch
     chmod 0660 /sys/devices/f9923000.i2c/i2c-1/1-004a/secure_touch_enable

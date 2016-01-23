@@ -18,4 +18,3 @@
 
 /* for nubia camera stock app */
 extern "C" void _ZN8SkBitmap9setConfigENS_6ConfigEiij11SkAlphaType() {}
-

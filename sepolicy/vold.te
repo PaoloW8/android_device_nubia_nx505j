@@ -1,0 +1,2 @@
+#============= vold ==============
+allow vold storage_stub_file:dir { read write search open add_name };

@@ -18,5 +18,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot          emmc    defaults        recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/splash       /splash         emmc    defaults        recoveryonly
 
-/devices/msm_sdcc.2/mmc_host*            auto           auto            defaults         voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/msm_sdcc.2/mmc_host*            auto       auto        defaults         voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/xhci-hcd/usb1*         auto		auto    	defaults         voldmanaged=usb:auto

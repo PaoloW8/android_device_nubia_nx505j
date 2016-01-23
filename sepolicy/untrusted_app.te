@@ -1,3 +1,5 @@
 #============= untrusted_app ==============
 allow untrusted_app healthd_service:service_manager find;
 allow untrusted_app self:udp_socket ioctl;
+allow untrusted_app storage_stub_file:dir getattr;
+allow untrusted_app tombstone_data_file:dir getattr;

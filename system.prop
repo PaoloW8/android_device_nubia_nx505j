@@ -48,7 +48,7 @@ qcom.hw.aac.encoder=true
 #
 persist.cne.feature=1
 
-sys.io.scheduler=bfq
+#sys.io.scheduler=bfq
 
 #system props for the MM modules
 media.stagefright.enable-player=true

@@ -21,6 +21,8 @@
 #define BTM_DEF_LOCAL_NAME   "ZTE NUBIA NX505J"
 // Disables read remote device feature
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
+// Enables Interleave scan
+#define BTA_HOST_INTERLEAVE_SEARCH TRUE
 #define MAX_L2CAP_CHANNELS    16
 #define BLE_VND_INCLUDED   TRUE
 // skips conn update at conn completion

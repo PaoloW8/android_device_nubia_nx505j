@@ -175,3 +175,6 @@ service set_softkey /system/bin/set_softkey.sh
 on property:softkey.change=1
     start set_softkey
 
+on property:dev.bootcomplete=1
+    setprop sys.io.scheduler "bfq"
+

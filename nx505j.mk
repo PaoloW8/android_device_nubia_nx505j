@@ -83,8 +83,8 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libqcomvoiceprocessingdescriptors
-#    tinymix
+    libqcomvoiceprocessingdescriptors \
+    tinymix
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -131,8 +131,11 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
+    #FMRadio \
+    #libfmjni
 
 # Dot View Case
 PRODUCT_PACKAGES += Dotcase
@@ -254,7 +257,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     ueventd.rc
 
-# Old RIL symbols
+# for nubia camera app
 PRODUCT_PACKAGES += \
     libnubia
 

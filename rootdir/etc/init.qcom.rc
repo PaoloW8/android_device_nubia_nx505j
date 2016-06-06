@@ -1032,13 +1032,14 @@ on property:persist.usb.hvdcp.detect=false
     stop hvdcp
 
 service charger_monitor /system/bin/charger_monitor
-    user system
-    group system
+    user root
+    group root
     disabled
 
 service qbcharger /charger -m 1
     disabled
     oneshot
+	seclabel u:r:healthd:s0
 
 on property:sys.qbcharger.enable=true
     start qbcharger

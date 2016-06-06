@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
     libnl_2 \
     libbson
 
+# Browser
+PRODUCT_PACKAGES += \
+    Gello
+
 # Filesystem
 PRODUCT_PACKAGES += \
     make_ext4fs 

@@ -14,7 +14,7 @@ bin/mpdecision
 #bin/ml_daemon
 #bin/ks
 bin/perfd
-bin/pfm
+#bin/pfm
 #bin/rild
 bin/uiautomator
 bin/gpsone_daemon
@@ -614,6 +614,7 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 vendor/lib/libtzdrmgenprov.so
 vendor/lib/libulp2.so
+vendor/lib/libuiblur.so
 vendor/lib/libvendorconn.so
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so

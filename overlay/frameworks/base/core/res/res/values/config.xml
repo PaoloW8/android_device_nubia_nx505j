@@ -338,22 +338,7 @@
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <!--integer name="config_lightSensorWarmupTime">1000</integer-->
-
-    <!-- Control the behavior when the user short presses the power button.
-            0 - Nothing
-            1 - Go to sleep (doze)
-            2 - Really go to sleep (don't doze)
-            3 - Really go to sleep and go home (don't doze)
-    
-    <integer name="config_shortPressOnPowerBehavior">2</integer> -->
-
-    <!-- Indicate whether to allow the device to suspend when the screen is off
-         due to the proximity sensor.  This resource should only be set to true
-         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
-         Otherwise, the device may fail to wake out of suspend reliably.
-         The default is false. 
-    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool> -->
-
+  
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
 
@@ -402,4 +387,8 @@
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
+
+    <!-- Enable UI blur feature -->
+    <bool name="config_ui_blur_enabled">true</bool>
+
 </resources>

@@ -104,9 +104,9 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
 # Charger
-PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images
+#PRODUCT_PACKAGES += \
+#    charger \
+#    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
@@ -138,8 +138,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio
-    #FMRadio \
-    #libfmjni
 
 # Dot View Case
 PRODUCT_PACKAGES += Dotcase

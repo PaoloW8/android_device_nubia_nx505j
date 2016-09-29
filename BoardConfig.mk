@@ -22,16 +22,11 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 	frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl \
 	frameworks/base/data/keyboards/Generic.kcm:system/usr/keychars/Generic.kcm, $(PRODUCT_COPY_FILES))
 
-
-# QCRIL
+# RIL
 TARGET_RIL_VARIANT := caf
-SIM_COUNT := 2
-TARGET_GLOBAL_CFLAGS += -DANDROID_MULTI_SIM
-TARGET_GLOBAL_CPPFLAGS += -DANDROID_MULTI_SIM
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
+BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
-PROTOBUF_SUPPORTED := true
+#PROTOBUF_SUPPORTED := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := NX505J,nx505j,cm_NX505J,cm_nx505j,NX505j,jNX505
@@ -42,19 +37,16 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12738083840
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
-BOARD_VENDOR := zte-qcom
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
+BOARD_VENDOR := zte-qcom
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
-USE_CLANG_PLATFORM_BUILD := true
 
 # Architecture
 TARGET_ARCH := arm
@@ -73,16 +65,16 @@ TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 # Kernel
-KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-gnueabihf-linaro_4.9/bin/arm-cortex_a15-linux-gnueabihf-
 BOARD_DTBTOOL_ARGS := --force-v2
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-gnueabihf-linaro_4.9/bin/arm-cortex_a15-linux-gnueabihf-
 TARGET_KERNEL_SOURCE := kernel/nubia/nx505j
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CONFIG := cm-nx505j_defconfig
+TARGET_KERNEL_CONFIG := cm-nx505j_nomodules_defconfig
 TARGET_ZTEMT_DTS := true
 
 # Power
@@ -114,6 +106,7 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_SMD_TTY := true
 
 # Enables Adreno RS driver
+BOARD_USES_ADRENO := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
@@ -147,20 +140,29 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+TARGET_SPECIFIC_HEADER_PATH := device/nubia/nx505j/include
 
 # RPC
 TARGET_NO_RPC := true
 
 # CMHW
+BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := \
-    $(LOCAL_PATH)/cmhw \
-    hardware/cyanogen/cmhw
+#BOARD_HARDWARE_CLASS := \
+#    $(LOCAL_PATH)/cmhw \
+#    hardware/cyanogen/cmhw
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+
+# Sensors
+BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
+
+# Init msm8974
+TARGET_INIT_VENDOR_LIB := libinit_msm8974
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8974
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -168,7 +170,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
-#BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Partitions
@@ -188,8 +190,6 @@ BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME := "wlan"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 TARGET_USES_WCNSS_CTRL := true
@@ -197,6 +197,8 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 TARGET_PROVIDES_WCNSS_QMI := true
 
 # Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+BOARD_NO_SECURE_DISCARD := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true

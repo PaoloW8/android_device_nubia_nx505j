@@ -1,2 +1,2 @@
 #============= tee ==============
-allow tee vfat:file { read getattr open };
+allow tee vfat:file { getattr open read };

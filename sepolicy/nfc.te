@@ -1,3 +1,4 @@
 #============= nfc ==============
+#allow nfc device:chr_file { ioctl open read write };
 allow nfc device:chr_file { ioctl };
-allow nfc bcmnfc_device:chr_file { ioctl read write open };
+allow nfc bcmnfc_device:chr_file { ioctl open read write };

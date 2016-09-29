@@ -33,7 +33,7 @@ lib/libnubia_runtime.so
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
-bin/loc_launcher
+#bin/loc_launcher
 bin/location-mq
 bin/lowi-server
 bin/quipc_igsn
@@ -101,10 +101,10 @@ lib/libchromatix_t4k35_liveshot.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
-lib/libmorpho_image_converter.so
-lib/libmorpho_jpeg_io.so
-lib/libmorpho_memory_allocator.so
-lib/libmorpho_strobe_photo_jni.so
+#lib/libmorpho_image_converter.so
+#lib/libmorpho_jpeg_io.so
+#lib/libmorpho_memory_allocator.so
+#lib/libmorpho_strobe_photo_jni.so
 lib/libcurl_camera.so
 lib/libFNVfbEngineLib.so
 lib/libImageAlogrithm.so

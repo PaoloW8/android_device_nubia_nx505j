@@ -1,2 +1,0 @@
-#============= wcnss_service ==============
-allow wcnss_service persist_file:file { read getattr open };

@@ -1,4 +1,2 @@
 #============= mm-qcamerad ==============
-allow mm-qcamerad system_file:file execmod;
-allow mm-qcamerad sensors_socket:sock_file read;
-allow mm-qcamerad system_data_file:dir { write add_name };
+#allow mm-qcamerad system_file:file execmod;

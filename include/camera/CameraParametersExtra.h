@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#define CAMERA_PARAMETERS_EXTRA_C \
+    const char CameraParameters::FOCUS_MODE_MANUAL_POSITION[] = "manual"; \
+    const char CameraParameters::WHITE_BALANCE_MANUAL_CCT[] = "manual-cct";
 
-/* for nubia camera stock app */
-extern "C" void _ZN8SkBitmap9setConfigENS_6ConfigEiij11SkAlphaType() {}
+#define CAMERA_PARAMETERS_EXTRA_H \
+    static const char FOCUS_MODE_MANUAL_POSITION[]; \
+    static const char WHITE_BALANCE_MANUAL_CCT[];
+

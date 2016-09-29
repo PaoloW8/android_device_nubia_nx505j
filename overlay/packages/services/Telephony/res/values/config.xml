@@ -37,7 +37,4 @@
     <bool name="config_show_apn_setting_cdma">true</bool>
 
     <bool name="config_uplmn_for_usim">true</bool>
-    <!-- Flag whether to enable Proximity setting-->
-    <bool name="config_proximity_enable" translatable="false">true</bool>
-
 </resources>

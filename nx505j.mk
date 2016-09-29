@@ -101,12 +101,8 @@ PRODUCT_PACKAGES += \
 
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
-# Charger
-#PRODUCT_PACKAGES += \
-#    charger \
-#    charger_res_images
+    libcnefeatureconfig \
+    librmnetctl
 
 # Display
 PRODUCT_PACKAGES += \
@@ -140,7 +136,7 @@ PRODUCT_PACKAGES += \
     qcom.fmradio
 
 # Dot View Case
-PRODUCT_PACKAGES += Dotcase
+#PRODUCT_PACKAGES += Dotcase
 
 # LOWI
 PRODUCT_COPY_FILES += \
@@ -151,8 +147,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/sec_config:system/etc/sec_config
 
 # BoringSSL compatability wrapper
-PRODUCT_PACKAGES += \
-    libboringssl-compat
+#PRODUCT_PACKAGES += \
+#    libboringssl-compat
 
 # Stlport
 PRODUCT_PACKAGES += \
@@ -200,7 +196,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     $(LOCAL_PATH)/wifi/wifi_info:system/etc/wifi/wifi_info
       
 # country for infrared
@@ -228,8 +224,8 @@ PRODUCT_PACKAGES += \
 #    libOmxMux \
 #    libOmxVdecHevc \
 
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+#PRODUCT_BOOT_JARS += \
+#    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
@@ -260,8 +256,8 @@ PRODUCT_PACKAGES += \
     ueventd.rc
 
 # for nubia camera app
-PRODUCT_PACKAGES += \
-    libnubia
+#PRODUCT_PACKAGES += \
+#    libnubia
 
 # Thermal config
 PRODUCT_COPY_FILES += \
@@ -274,7 +270,6 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd.accept \
     hostapd.deny \
     hostapd \
@@ -308,10 +303,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion
 
-PRODUCT_PACKAGES += \
-    LatinIME \
-    libjni_latinime
-
 # GPS configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/flp.conf:system/etc/flp.conf \
@@ -330,20 +321,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/data/network.conf:system/etc/bluetooth/network.conf \
     $(LOCAL_PATH)/etc/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
     $(LOCAL_PATH)/etc/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
-    $(LOCAL_PATH)/etc/hcidump.sh:system/etc/hcidump.sh \
-    $(LOCAL_PATH)/etc/hsic.control.bt.sh:system/etc/hsic.control.bt.sh \
-    $(LOCAL_PATH)/etc/init.ath3k.bt.sh:system/etc/init.ath3k.bt.sh \
-    $(LOCAL_PATH)/etc/init.crda.sh:system/etc/init.crda.sh \
-    $(LOCAL_PATH)/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
-    $(LOCAL_PATH)/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
     $(LOCAL_PATH)/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
-    $(LOCAL_PATH)/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-    $(LOCAL_PATH)/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
     $(LOCAL_PATH)/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
-    $(LOCAL_PATH)/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    $(LOCAL_PATH)/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
+    $(LOCAL_PATH)/etc/init.qcom.ril.sh:system/etc/init.qcom.ril.sh \
     $(LOCAL_PATH)/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml \
-    $(LOCAL_PATH)/etc/qca6234-service.sh:system/etc/qca6234-service.sh \
     $(LOCAL_PATH)/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/etc/xtwifi.conf:system/etc/xtwifi.conf \
     $(LOCAL_PATH)/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf

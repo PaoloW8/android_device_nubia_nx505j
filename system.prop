@@ -1,24 +1,23 @@
 #
 # system.prop for NX505J Z7 MAX
 #
-ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
+ro.vendor.extension_library=libqti-perfd-client.so
 
 persist.sys.usb.config=adb
 
-rild.libpath=/vendor/lib/libril-qc-qmi-1.so
-rild.libargs=-d /dev/smd0
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-persist.radio.rat_on=combine
+rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
+#rild.libargs=-d /dev/smd0
+#persist.rild.nitz_plmn=
+#persist.rild.nitz_long_ons_0=
+#persist.rild.nitz_long_ons_1=
+#persist.rild.nitz_long_ons_2=
+#persist.rild.nitz_long_ons_3=
+#persist.rild.nitz_short_ons_0=
+#persist.rild.nitz_short_ons_1=
+#persist.rild.nitz_short_ons_2=
+#persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
-ro.ril.enable.amr.wideband=1
+#ro.ril.enable.amr.wideband=1
 DEVICE_PROVISIONED=1
 persist.radio.rat_on=combine
 persist.radio.multisim.config=dsds
@@ -28,6 +27,7 @@ ro.ril.force_eri_from_xml=true
 persist.radio.apm_sim_not_pwdn=1
 ro.telephony.ril.config=simactivation
 persist.data.qmi.adb_logmask=0
+persist.radio.msgtunnel.start=false
 
 debug.sf.hw=1
 debug.egl.hw=1
@@ -43,12 +43,11 @@ persist.demo.hdmirotationlock=false
 ro.hdmi.enable=true
 persist.speaker.prot.enable=false
 qcom.hw.aac.encoder=true
+
 #
 # system props for the cne module
 #
 persist.cne.feature=1
-
-#sys.io.scheduler=bfq
 
 #system props for the MM modules
 media.stagefright.enable-player=true
@@ -77,6 +76,12 @@ ro.data.large_tcp_window_size=true
 #system props for time-services
 persist.timed.enable=true
 
+# Storage
+ro.sys.sdcardfs=true
+
+# Wifi
+wifi.interface=wlan0
+
 #
 # system prop for opengles version
 #
@@ -100,11 +105,6 @@ bluetooth.hfp.client=1
 # System props for bluetooth LE Always on feature
 #
 ro.bluetooth.alwaysbleon=true
-
-#Simulate sdcard on /data/media
-#
-#persist.fuse_sdcard=true
-#ro.sdcardfs.enable=true
 
 #
 #snapdragon value add features
@@ -158,12 +158,12 @@ sys.nubia_safe_preset=1
 persist.factory.keypad_type=standard_without_camera
 persist.factory.receiver_volume=10
 persist.factory.loopback_volume=12
-persist.gps.qc_nlp_in_use=1
+#persist.gps.qc_nlp_in_use=1
 #persist.loc.nlp_name=com.qualcomm.location
-ro.gps.agps_provider=1
+#ro.gps.agps_provider=1
 ro.pip.gated=0
-#ro.qualcomm.perf.cores_online=1
 vold.pfe=deactivated
+
 # Wifi
 ro.disableWifiApFirmwareReload=true
 

@@ -1,2 +1,6 @@
 #============= sysinit ==============
-allow sysinit swap_block_device:blk_file { read write getattr open };
+allow sysinit swap_block_device:blk_file { getattr open read write };
+allow sysinit sysfs_zram:dir search;
+allow sysinit sysfs_zram:file { open write };
+allow sysinit system_file:dir { open read };
+allow sysinit toolbox_exec:file { execute execute_no_trans getattr open read };

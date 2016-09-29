@@ -1,9 +1,5 @@
 #============= system_server ==============
-#allow system_server default_prop:property_service set;
-allow system_server persist_file:file { read open };
-allow system_server sensors_persist_file:file { read open };
+allow system_server persist_file:file { open read };
 allow system_server sysfs_battery_supply:dir search;
-allow system_server sysfs_battery_supply:file { read open };
-allow system_server sysfs_usb_supply:dir search;
-allow system_server sysfs_usb_supply:file { read getattr open };
-allow system_server storage_stub_file:dir getattr;
+allow system_server sysfs_battery_supply:file { open read };
+allow system_server adbsecure_prop:file { getattr open read };

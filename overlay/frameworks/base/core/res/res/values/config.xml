@@ -263,14 +263,6 @@
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">true</bool>
 
-    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
-         it causes the device to wake up.
-         The default is false. 
-    <bool name="config_lidControlsSleep">true</bool> -->
-
-    <!-- Boolean indicating whether Softap requires reloading AP firmware 
-    <bool name="config_wifiApFirmwareReload">false</bool> -->
-
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
         on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
@@ -306,12 +298,6 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
-
-    <!-- Enable overlay for all location components. -->
-    <!--bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
-    <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
-    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string-->
 
     <!-- Default interface to monitor data use -->
     <string name="config_datause_iface">rmnet0</string>
@@ -394,7 +380,6 @@
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
-    <!-- Enable UI blur feature -->
-    <bool name="config_ui_blur_enabled">true</bool>
-
+    <!-- Enable UI blur feature
+    <bool name="config_ui_blur_enabled">true</bool> -->
 </resources>

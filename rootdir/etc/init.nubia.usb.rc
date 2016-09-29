@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on init
+on boot
     write /sys/class/android_usb/android0/f_rndis/wceis 1
 
 #on charger

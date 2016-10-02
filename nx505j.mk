@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     qcom.fmradio
 
 # Dot View Case
-#PRODUCT_PACKAGES += Dotcase
+PRODUCT_PACKAGES += Dotcase
 
 # LOWI
 PRODUCT_COPY_FILES += \
@@ -147,12 +147,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/sec_config:system/etc/sec_config
 
 # BoringSSL compatability wrapper
-#PRODUCT_PACKAGES += \
-#    libboringssl-compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
 
 # Stlport
-PRODUCT_PACKAGES += \
-    libstlport
+#PRODUCT_PACKAGES += \
+#    libstlport
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -323,7 +323,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
     $(LOCAL_PATH)/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
     $(LOCAL_PATH)/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
-    $(LOCAL_PATH)/etc/init.qcom.ril.sh:system/etc/init.qcom.ril.sh \
     $(LOCAL_PATH)/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml \
     $(LOCAL_PATH)/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/etc/xtwifi.conf:system/etc/xtwifi.conf \

@@ -29,6 +29,10 @@ ro.telephony.ril.config=simactivation
 persist.data.qmi.adb_logmask=0
 persist.radio.msgtunnel.start=false
 
+persist.radio.oem_socket=false
+persist.radio.no_wait_for_card=1
+persist.radio.add_power_save=1
+
 debug.sf.hw=1
 debug.egl.hw=1
 debug.composition.type=c2d

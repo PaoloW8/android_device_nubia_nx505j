@@ -24,3 +24,4 @@ allow untrusted_app safemode_prop:file { getattr open };
 allow untrusted_app sys_usb_configfs_prop:file { getattr open };
 allow untrusted_app sys_usb_controller_prop:file { getattr open };
 allow untrusted_app userinit_prop:file { getattr open };
+allow untrusted_app sysfs:dir { open read };

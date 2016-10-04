@@ -24,9 +24,9 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 
 # RIL
 TARGET_RIL_VARIANT := caf
-BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
-FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
-#PROTOBUF_SUPPORTED := true
+#BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
+#FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
+PROTOBUF_SUPPORTED := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := NX505J,nx505j,cm_NX505J,cm_nx505j,NX505j,jNX505
@@ -66,7 +66,8 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 # Kernel
 BOARD_DTBTOOL_ARGS := --force-v2
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -106,7 +107,6 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_SMD_TTY := true
 
 # Enables Adreno RS driver
-BOARD_USES_ADRENO := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
@@ -147,7 +147,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/nubia/nx505j/include
 TARGET_NO_RPC := true
 
 # CMHW
-BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/cmhw
+BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
 BOARD_USES_CYANOGEN_HARDWARE := true
 #BOARD_HARDWARE_CLASS := \
@@ -207,9 +207,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # dex-preoptimization to speed up first boot sequence
-WITH_DEXPREOPT := false
+#WITH_DEXPREOPT := false
 
-SKIP_BOOT_JARS_CHECK := true
+#SKIP_BOOT_JARS_CHECK := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

@@ -109,7 +109,7 @@ lib/libcurl_camera.so
 lib/libFNVfbEngineLib.so
 lib/libImageAlogrithm.so
 lib/libSFB.so
-lib/libbuffer_manager.so
+#lib/libbuffer_manager.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so

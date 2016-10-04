@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     qcom.fmradio
 
 # Dot View Case
-PRODUCT_PACKAGES += Dotcase
+#PRODUCT_PACKAGES += Dotcase
 
 # LOWI
 PRODUCT_COPY_FILES += \

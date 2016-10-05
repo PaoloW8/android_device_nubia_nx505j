@@ -4,6 +4,7 @@
 ro.vendor.extension_library=libqti-perfd-client.so
 
 persist.sys.usb.config=adb
+qcom.bluetooth.soc=smd
 
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 #rild.libargs=-d /dev/smd0

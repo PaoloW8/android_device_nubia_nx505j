@@ -33,7 +33,7 @@ lib/libnubia_runtime.so
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
-#bin/loc_launcher
+bin/loc_launcher
 bin/location-mq
 bin/lowi-server
 bin/quipc_igsn
@@ -87,7 +87,7 @@ bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8974.so:lib/hw/camera.msm8974.so
 lib/libqomx_core.so
-lib/libOmxVdecHevc.so
+#lib/libOmxVdecHevc.so
 lib/libchromatix_imx135_069_liveshot.so
 lib/libchromatix_imx135_front_liveshot.so
 lib/libchromatix_imx135_gbao_lc898122_liveshot.so
@@ -551,13 +551,13 @@ vendor/lib/libmsapm_jni.so
 vendor/lib/libnetmgr.so
 vendor/lib/libNimsWrap.so
 vendor/lib/liboemcamera.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxMux.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxWmaDec.so
-#vendor/lib/libOpenCL.so
+##vendor/lib/libOmxAacDec.so
+##vendor/lib/libOmxAmrwbplusDec.so
+##vendor/lib/libOmxEvrcDec.so
+##vendor/lib/libOmxMux.so
+##vendor/lib/libOmxQcelp13Dec.so
+##vendor/lib/libOmxWmaDec.so
+vendor/lib/libOpenCL.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libpfecommon.so
 vendor/lib/libprofiler_msmadc.so

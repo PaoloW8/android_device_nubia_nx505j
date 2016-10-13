@@ -24,8 +24,6 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 
 # RIL
 TARGET_RIL_VARIANT := caf
-#BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
-#FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 PROTOBUF_SUPPORTED := true
 
 # Assert
@@ -66,7 +64,6 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 # Kernel
 BOARD_DTBTOOL_ARGS := --force-v2
-#BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
@@ -139,9 +136,10 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Camera
+TARGET_SPECIFIC_HEADER_PATH := device/nubia/nx505j/include
 USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
-TARGET_SPECIFIC_HEADER_PATH := device/nubia/nx505j/include
+#TARGET_USE_COMPAT_GRALLOC_ALIGN := true
 
 # RPC
 TARGET_NO_RPC := true
@@ -150,15 +148,12 @@ TARGET_NO_RPC := true
 BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
 BOARD_USES_CYANOGEN_HARDWARE := true
-#BOARD_HARDWARE_CLASS := \
-#    $(LOCAL_PATH)/cmhw \
-#    hardware/cyanogen/cmhw
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Sensors
-BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
+#BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
 
 # Init msm8974
 TARGET_INIT_VENDOR_LIB := libinit_msm8974

@@ -150,10 +150,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libboringssl-compat
 
-# Stlport
-#PRODUCT_PACKAGES += \
-#    libstlport
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8974
@@ -232,32 +228,20 @@ PRODUCT_PACKAGES += \
     power.msm8974
 
 #enable/disable softkey script
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.rc \
     fstab.qcom \
-    init.class_main.sh \
-    init.mdm.sh \
     init.nubia.sh \
     init.nubia.usb.rc \
-    init.qcom.early_boot.sh \
-    init.qcom.factory.sh \
     init.qcom.rc \
     init.recovery.qcom.rc \
-    init.qcom.sh \
-    init.qcom.ssr.sh \
     init.qcom.usb.sh \
-    init.target.rc \
-    init.trace.rc \
     ueventd.qcom.rc \
     ueventd.rc
-
-# for nubia camera app
-#PRODUCT_PACKAGES += \
-#    libnubia
 
 # Thermal config
 PRODUCT_COPY_FILES += \

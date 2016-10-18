@@ -228,8 +228,8 @@ PRODUCT_PACKAGES += \
 #    libOmxMux \
 #    libOmxVdecHevc \
 
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+#PRODUCT_BOOT_JARS += \
+#    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
@@ -307,10 +307,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libion
-
-PRODUCT_PACKAGES += \
-    LatinIME \
-    libjni_latinime
 
 # GPS configuration
 PRODUCT_COPY_FILES += \

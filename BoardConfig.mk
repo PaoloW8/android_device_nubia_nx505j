@@ -25,12 +25,12 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 
 # QCRIL
 TARGET_RIL_VARIANT := caf
-SIM_COUNT := 2
-TARGET_GLOBAL_CFLAGS += -DANDROID_MULTI_SIM
-TARGET_GLOBAL_CPPFLAGS += -DANDROID_MULTI_SIM
+#SIM_COUNT := 2
+#TARGET_GLOBAL_CFLAGS += -DANDROID_MULTI_SIM
+#TARGET_GLOBAL_CPPFLAGS += -DANDROID_MULTI_SIM
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
-FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
+#FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 PROTOBUF_SUPPORTED := true
 
 # Assert
@@ -75,7 +75,7 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 # Kernel
 KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-gnueabihf-linaro_4.9/bin/arm-cortex_a15-linux-gnueabihf-
 BOARD_DTBTOOL_ARGS := --force-v2
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048

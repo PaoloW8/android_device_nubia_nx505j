@@ -18,7 +18,7 @@ rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 #persist.rild.nitz_short_ons_2=
 #persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
-#ro.ril.enable.amr.wideband=1
+ro.ril.enable.amr.wideband=1
 DEVICE_PROVISIONED=1
 persist.radio.rat_on=combine
 persist.radio.multisim.config=dsds
@@ -64,7 +64,7 @@ media.stagefright.enable-scan=true
 
 #for video recording, experimental and temporary
 media.stagefright.legacyencoder=true
-media.stagefright.codecremote=false
+media.stagefright.less-secure=true
 
 mmp.enable.3g2=true
 mm.enable.smoothstreaming=true

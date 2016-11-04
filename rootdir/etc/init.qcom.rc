@@ -33,9 +33,9 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
-    # Preload the BoringSSL wrapper
-    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
-    export LD_SHIM_LIBS /system/lib/libbuffer_manager.so|libnubia.so
+
+    # LIB SHIM
+    export LD_SHIM_LIBS "/system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so:/system/lib/libnubiajpeg.so|/system/lib/libshim_nubia.so:/system/lib/libbuffer_manager.so|libshim_nubia.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system

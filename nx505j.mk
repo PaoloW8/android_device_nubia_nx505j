@@ -261,7 +261,7 @@ PRODUCT_PACKAGES += \
 
 # for nubia camera app
 PRODUCT_PACKAGES += \
-    libnubia
+    libshim_nubia
 
 # Thermal config
 PRODUCT_COPY_FILES += \

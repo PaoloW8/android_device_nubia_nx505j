@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,3 +18,4 @@
 
 /* for nubia camera stock app */
 extern "C" void _ZN8SkBitmap9setConfigENS_6ConfigEiij11SkAlphaType() {}
+

@@ -105,8 +105,11 @@ lib/libmorpho_memory_allocator.so
 lib/libmorpho_strobe_photo_jni.so
 lib/libcurl_camera.so
 lib/libFNVfbEngineLib.so
+lib/libFNVfbEngineHAL.so
 lib/libImageAlogrithm.so
 lib/libSFB.so
+lib/libnubia_effect.so
+lib/libnubiajpeg.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
@@ -299,6 +302,7 @@ vendor/lib/libchromatix_imx214_default_video_4k.so
 vendor/lib/libchromatix_imx214_default_video.so
 vendor/lib/libchromatix_imx214_hfr_120.so
 vendor/lib/libchromatix_imx214_nightmode_1.so
+vendor/lib/libchromatix_imx214_nightmode_2.so
 vendor/lib/libchromatix_imx214_nightmode.so
 vendor/lib/libchromatix_imx214_ois_sharp_common.so
 vendor/lib/libchromatix_imx214_ois_sharp_default_video_4k.so
@@ -307,6 +311,7 @@ vendor/lib/libchromatix_imx214_ois_sharp_hfr_120.so
 vendor/lib/libchromatix_imx214_ois_sharp_hfr_60.so
 vendor/lib/libchromatix_imx214_ois_sharp_liveshot.so
 vendor/lib/libchromatix_imx214_ois_sharp_nightmode_1.so
+vendor/lib/libchromatix_imx214_ois_sharp_nightmode_2.so
 vendor/lib/libchromatix_imx214_ois_sharp_nightmode.so
 vendor/lib/libchromatix_imx214_ois_sharp_preview.so
 vendor/lib/libchromatix_imx214_ois_sharp_previewzsl.so

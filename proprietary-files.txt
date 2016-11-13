@@ -107,8 +107,11 @@ lib/libmmjpeg_interface.so
 #lib/libmorpho_strobe_photo_jni.so
 lib/libcurl_camera.so
 lib/libFNVfbEngineLib.so
+lib/libFNVfbEngineHAL.so
 lib/libImageAlogrithm.so
 lib/libSFB.so
+lib/libnubia_effect.so
+lib/libnubiajpeg.so
 #lib/libbuffer_manager.so
 
 # Graphics
@@ -128,8 +131,6 @@ vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
 vendor/lib/libWVphoneAPI.so
 vendor/lib/libWVStreamControlAPI_L3.so
-etc/permissions/com.google.widevine.software.drm.xml
-framework/com.google.widevine.software.drm.jar
 
 # Audio
 vendor/lib/soundfx/libqcbassboost.so
@@ -226,6 +227,7 @@ vendor/lib/libadsprpc.so
 #vendor/lib/libalarmservice_jni.so
 vendor/lib/libaudcal.so
 vendor/lib/libbtnv.so
+vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
@@ -308,6 +310,7 @@ vendor/lib/libchromatix_imx214_default_video_4k.so
 vendor/lib/libchromatix_imx214_default_video.so
 vendor/lib/libchromatix_imx214_hfr_120.so
 vendor/lib/libchromatix_imx214_nightmode_1.so
+vendor/lib/libchromatix_imx214_nightmode_2.so
 vendor/lib/libchromatix_imx214_nightmode.so
 vendor/lib/libchromatix_imx214_ois_sharp_common.so
 vendor/lib/libchromatix_imx214_ois_sharp_default_video_4k.so
@@ -316,6 +319,7 @@ vendor/lib/libchromatix_imx214_ois_sharp_hfr_120.so
 vendor/lib/libchromatix_imx214_ois_sharp_hfr_60.so
 vendor/lib/libchromatix_imx214_ois_sharp_liveshot.so
 vendor/lib/libchromatix_imx214_ois_sharp_nightmode_1.so
+vendor/lib/libchromatix_imx214_ois_sharp_nightmode_2.so
 vendor/lib/libchromatix_imx214_ois_sharp_nightmode.so
 vendor/lib/libchromatix_imx214_ois_sharp_preview.so
 vendor/lib/libchromatix_imx214_ois_sharp_previewzsl.so

@@ -97,6 +97,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libxml2 \
     camera.msm8974 \
+    libshim_camera \
     Snap
 
 # Connectivity Engine support
@@ -242,6 +243,13 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     ueventd.qcom.rc \
     ueventd.rc
+
+# for nubia camera app
+PRODUCT_PACKAGES += \
+    libshim_nubia
+
+PRODUCT_PACKAGES += \
+    libshim_wvm
 
 # Thermal config
 PRODUCT_COPY_FILES += \

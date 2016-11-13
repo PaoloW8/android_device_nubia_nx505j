@@ -3,3 +3,4 @@ allow system_server persist_file:file { open read };
 allow system_server sysfs_battery_supply:dir search;
 allow system_server sysfs_battery_supply:file { open read };
 allow system_server adbsecure_prop:file { getattr open read };
+allow system_server unlabeled:file unlink;

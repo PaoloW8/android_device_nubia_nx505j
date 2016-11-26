@@ -17,8 +17,10 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME   "ZTE NUBIA NX505J"
+
 #define BLUETOOTH_QTI_SW     TRUE
+
+#define BTM_DEF_LOCAL_NAME   "ZTE NUBIA NX505J"
 // Disables read remote device feature
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
 #define MAX_L2CAP_CHANNELS 16

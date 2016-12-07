@@ -414,6 +414,11 @@ on post-fs-data
 	chown system system /sys/devices/gpio_keys.85/disabled_keys	
 	chmod 0666 /sys/devices/gpio_keys.85/disabled_keys	
 
+	chown system system /sys/bus/i2c/devices/2-0022/input/input0/0dbutton
+	chmod 0666 /sys/bus/i2c/devices/2-0022/input/input0/0dbutton
+	chown system system /sys/bus/ttsp4/drivers/cyttsp4_btn/cyttsp4_btn.main_ttsp_core/button
+	chmod 0666 /sys/bus/ttsp4/drivers/cyttsp4_btn/cyttsp4_btn.main_ttsp_core/button
+
 	#lcd enhance
 	chown system system /sys/kernel/lcd_enhance/disptype
 	chmod 0666 /sys/kernel/lcd_enhance/disptype

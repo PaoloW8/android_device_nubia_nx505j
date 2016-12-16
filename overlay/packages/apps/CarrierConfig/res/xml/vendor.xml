@@ -3,5 +3,6 @@
     <carrier_config>
         <boolean name="world_phone_bool" value="true" />
         <boolean name="show_cdma_choices_bool" value="true" />
+	<boolean name="config_enable_mms_with_mobile_data_off" value="true" />
     </carrier_config>
 </carrier_config_list>

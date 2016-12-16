@@ -215,22 +215,14 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libstagefrighthw \
     libstagefright_soft_flacdec 
-#    libdashplayer \
-#    libqcmediaplayer \
-#    qcmediaplayer
-#    libOmxMux \
-#    libOmxVdecHevc \
-
-#PRODUCT_BOOT_JARS += \
-#    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
     power.msm8974
 
-#enable/disable softkey script
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
+# Doze mode
+PRODUCT_PACKAGES += \
+    NubiaDoze
 
 # Ramdisk
 PRODUCT_PACKAGES += \

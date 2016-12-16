@@ -151,9 +151,8 @@
     <!-- The RadioAccessFamilies supported by the device.
          Empty is viewed as "all". Only used on devices which
          don't support RIL_REQUEST_GET_RADIO_CAPABILITY
-         format is UMTS|LTE|... 
-    <string translatable="false" name="config_radio_access_family">GPRS|EDGE|UMTS|HSDPA|HSUPA|HSPA|LTE|HSPAP|GSM|TD_SCDMA|WCDMA|LTE_CA</string> -->
-    <string translatable="false" name="config_radio_access_family">GPRS|EDGE|UMTS|IS95A|IS95B|1XRTT|EVDO_0|EVDO_A|HSDPA|HSUPA|HSPA|EVDO_B|EHRPD|LTE|HSPAP|GSM|TD_SCDMA|HS|CDMA|EVDO|WCDMA</string>
+         format is UMTS|LTE|... -->
+    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO|GSM|WCDMA|TD_SCDMA</string>
 
     <!-- If the DUN connection for this CDMA device supports more than just DUN -->
     <!-- traffic you should list them here. -->
@@ -368,18 +367,15 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- Doze mode
+    <!-- Doze mode -->
+    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+    <integer name="config_screenBrightnessDoze">10</integer>
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
-    <integer name="config_screenBrightnessDoze">17</integer>
-    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>  -->
  
-    <!-- enable doze powersaving mode -->
-    <bool name="config_enableAutoPowerModes">true</bool>
-    
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- Enable UI blur feature
-    <bool name="config_ui_blur_enabled">true</bool> -->
+    <bool name="config_uiBlurEnabled">true</bool> -->
 </resources>

@@ -79,12 +79,12 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8974 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors \
     tinymix
+#    libaudio-resampler \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -187,6 +187,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # WiFi
@@ -204,7 +205,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -212,9 +212,10 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libOmxVidcCommon \
-    libstagefrighthw \
-    libstagefright_soft_flacdec 
+    libstagefrighthw 
+#    libOmxVidcCommon \
+#    libextmedia_jni \
+#    libstagefright_soft_flacdec 
 
 # Power
 PRODUCT_PACKAGES += \

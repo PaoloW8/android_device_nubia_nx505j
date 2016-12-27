@@ -79,12 +79,12 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8974 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors \
     tinymix
+#    libaudio-resampler \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -102,11 +102,6 @@ PRODUCT_PACKAGES += \
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-
-# Charger
-#PRODUCT_PACKAGES += \
-#    charger \
-#    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
@@ -194,6 +189,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # WiFi
@@ -210,9 +206,7 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libdashplayer \
     libdivxdrmdecrypt \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -220,24 +214,14 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libOmxVidcCommon \
-    libqcmediaplayer \
-    libstagefrighthw \
-    libstagefright_soft_flacdec \
-    qcmediaplayer
-#    libOmxMux \
-#    libOmxVdecHevc \
-
-#PRODUCT_BOOT_JARS += \
-#    qcmediaplayer
+    libstagefrighthw 
+#    libOmxVidcCommon \
+#    libextmedia_jni \
+#    libstagefright_soft_flacdec 
 
 # Power
 PRODUCT_PACKAGES += \
     power.msm8974
-
-#enable/disable softkey script
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/set_softkey.sh:system/bin/set_softkey.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \

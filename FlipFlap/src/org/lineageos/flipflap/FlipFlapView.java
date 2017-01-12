@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 The CyanogenMod Project
+ * Copyright (c) 2017 The LineageOS Project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,20 +18,12 @@
  *
  */
 
-package org.cyanogenmod.dotcase;
+package org.lineageos.flipflap;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.provider.Settings;
+public interface FlipFlapView {
+    float getScreenBrightness();
 
-public class BootCompletedReceiver extends BroadcastReceiver {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Settings.Secure.putString(context.getContentResolver(),
-                                  Settings.Secure.IMMERSIVE_MODE_CONFIRMATIONS,
-                                  "org.cyanogenmod.dotcase");
+    boolean supportsAlarmActions();
 
-        new CoverObserver(context).init();
-    }
+    boolean supportsCallActions();
 }

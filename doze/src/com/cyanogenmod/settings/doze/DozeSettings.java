@@ -40,7 +40,6 @@ public class DozeSettings extends PreferenceActivity implements OnPreferenceChan
     private SharedPreferences mPreferences;
 
     private SwitchPreference mAmbientDisplayPreference;
-    private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
 
@@ -57,22 +56,15 @@ public class DozeSettings extends PreferenceActivity implements OnPreferenceChan
             showHelp();
         }
 
-        mAmbientDisplayPreference =
-            (SwitchPreference) findPreference(Utils.AMBIENT_DISPLAY_KEY);
+        mAmbientDisplayPreference = (SwitchPreference) findPreference(Utils.AMBIENT_DISPLAY_KEY);
         // Read from DOZE_ENABLED secure setting
         mAmbientDisplayPreference.setChecked(dozeEnabled);
         mAmbientDisplayPreference.setOnPreferenceChangeListener(this);
 
-        mPickUpPreference =
-            (SwitchPreference) findPreference(Utils.PICK_UP_KEY);
-        mPickUpPreference.setOnPreferenceChangeListener(this);
-
-        mHandwavePreference =
-            (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
+        mHandwavePreference = (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
         mHandwavePreference.setOnPreferenceChangeListener(this);
 
-        mPocketPreference =
-            (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
+        mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
         final ActionBar actionBar = getActionBar();
@@ -100,10 +92,6 @@ public class DozeSettings extends PreferenceActivity implements OnPreferenceChan
         if (Utils.AMBIENT_DISPLAY_KEY.equals(key)) {
             mAmbientDisplayPreference.setChecked(value);
             Utils.enableDoze(value, mContext);
-            return true;
-        } else if (Utils.PICK_UP_KEY.equals(key)) {
-            mPickUpPreference.setChecked(value);
-            Utils.startService(mContext);
             return true;
         } else if (Utils.GESTURE_HAND_WAVE_KEY.equals(key)) {
             mHandwavePreference.setChecked(value);

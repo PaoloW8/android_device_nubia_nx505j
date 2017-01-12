@@ -1,4 +1,5 @@
 # Copyright (C) 2014 The CyanogenMod Project
+#           (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,10 +22,10 @@ $(call inherit-product, device/nubia/nx505j/nx505j.mk)
 # Enhanced NFC
 #$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-# Inherit some common CM stuff.
+# Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_nx505j
+PRODUCT_NAME := lineage_nx505j
 PRODUCT_DEVICE := nx505j
 PRODUCT_MANUFACTURER := Nubia
 PRODUCT_MODEL := NX505J
@@ -36,6 +37,4 @@ TARGET_VENDOR := Nubia
 TARGET_VENDOR_PRODUCT_NAME := NX505J
 TARGET_VENDOR_DEVICE_NAME := NX505J
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=NX505J PRODUCT_NAME=NX505J
-
-
 

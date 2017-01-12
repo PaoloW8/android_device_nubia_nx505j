@@ -18,9 +18,9 @@
  *
  */
 
-package org.cyanogenmod.dotcase;
+package org.lineageos.flipflap;
 
-import org.cyanogenmod.dotcase.DotcaseConstants.Notification;
+import org.lineageos.flipflap.DotcaseConstants.Notification;
 
 import android.app.INotificationManager;
 import android.content.Context;
@@ -32,23 +32,19 @@ import android.util.Log;
 import java.util.List;
 import java.util.Vector;
 
-public class DotcaseStatus {
-
-    private static final String TAG = "Dotcase";
+public class FlipFlapStatus {
+    private static final String TAG = "FlipFlapStatus";
 
     private boolean mRunning = true;
     private boolean mPocketed = false;
     private boolean mResetTimer = false;
-
+    private boolean mStayOnTop = false;
     private boolean mRinging = false;
+    private boolean mAlarmClock = false;
     private int mRingCounter = 0;
     private String mCallerNumber = "";
     private String mCallerName = "";
     private int mCallerTicker = 0;
-    private boolean mAlarmClock = false;
-
-    private boolean mStayOnTop = false;
-
     private List<Notification> mNotifications = new Vector<Notification>();
 
     synchronized boolean isRunning() {

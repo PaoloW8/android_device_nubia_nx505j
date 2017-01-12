@@ -151,8 +151,9 @@
     <!-- The RadioAccessFamilies supported by the device.
          Empty is viewed as "all". Only used on devices which
          don't support RIL_REQUEST_GET_RADIO_CAPABILITY
-         format is UMTS|LTE|... -->
-    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO|GSM|WCDMA|TD_SCDMA</string>
+         format is UMTS|LTE|...
+    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO|GSM|WCDMA|TD_SCDMA</string> -->
+    <string translatable="false" name="config_radio_access_family">GPRS|EDGE|UMTS|IS95A|IS95B|1XRTT|EVDO_0|EVDO_A|HSDPA|HSUPA|HSPA|EVDO_B|EHRPD|LTE|HSPAP|GSM|TD_SCDMA|HS|CDMA|EVDO|WCDMA</string>
 
     <!-- If the DUN connection for this CDMA device supports more than just DUN -->
     <!-- traffic you should list them here. -->
@@ -236,6 +237,9 @@
 
     <!-- Set to true if the RSSI should always display CDMA signal strength even on EVDO -->
     <bool name="config_alwaysUseCdmaRssi">false</bool>
+
+    <!-- Whether to use TMO LTE singnal strength threshold -->
+    <bool name="config_regional_lte_singnal_threshold">true</bool>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>

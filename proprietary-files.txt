@@ -150,6 +150,7 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 bin/btnvtool
 bin/hci_qcomm_init
 bin/dun-server
+vendor/lib/libbt-vendor.so
 
 # Qualcomm framework
 bin/irsc_util

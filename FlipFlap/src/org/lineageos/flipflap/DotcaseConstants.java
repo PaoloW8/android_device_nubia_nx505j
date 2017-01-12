@@ -1,5 +1,6 @@
 /*
- * Copyright (c) 2014 The CyanogenMod Project
+ * Copyright (c) 2016 The CyanogenMod Project
+ * Copyright (c) 2017 The LineageOS Project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,7 +19,7 @@
  *
  */
 
-package org.cyanogenmod.dotcase;
+package org.lineageos.flipflap;
 
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -27,11 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DotcaseConstants {
-    static final String ACTION_KILL_ACTIVITY = "org.cyanogenmod.dotcase.KILL_ACTIVITY";
-    static final String ACTION_REDRAW = "org.cyanogenmod.dotcase.REDRAW";
     static final int DOT_RATIO = 19;
-    static final int OFFSET_X = 0;
-    static final int OFFSET_Y = 2;
 
     /**
      * Notification types
@@ -92,9 +89,8 @@ public class DotcaseConstants {
         0xfff86901, // Tapatalk Orange
     };
 
-    static Paint getPaintFromNumber(Paint paint, final int color) {
-        paint.setColor(paintColors[color + 1]);
-        return paint;
+    static int getColorFromNumber(final int color) {
+        return paintColors[color + 1];
     }
 
     /**

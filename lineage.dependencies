@@ -12,8 +12,8 @@
     "target_path": "hardware/qcom/fm"
   },
   {
-   "repository": "android_packages_resources_devicesettings",
-   "target_path": "packages/resources/devicesettings"
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
   },
   {
     "repository": "arm-cortex_a15-linux-gnueabihf-linaro_4.9",

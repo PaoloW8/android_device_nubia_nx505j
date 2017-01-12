@@ -3,12 +3,15 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13
+LOCAL_STATIC_JAVA_LIBRARIES :=  \
+    android-support-v13 \
+    org.cyanogenmod.platform.internal
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
-LOCAL_PACKAGE_NAME := Dotcase
+LOCAL_PACKAGE_NAME := FlipFlap
 LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

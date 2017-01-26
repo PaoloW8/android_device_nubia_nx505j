@@ -1,7 +1,7 @@
 #
 # system.prop for NX505J Z7 MAX
 #
-ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 #persist.sys.usb.config=adb
 qcom.bluetooth.soc=smd

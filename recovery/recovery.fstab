@@ -1,16 +1,24 @@
 # Android fstab file.
-#<src>						<mnt_point>     <type> <mnt_flags and options>                                         <fs_mgr_flags>
+#<src>                                         <mnt_point>  <type>  <mnt_flags and options>  <fs_mgr_flags>
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/dev/block/platform/msm_sdcc.1/by-name/system	/system		ext4    ro,barrier=1                                                    wait
-/dev/block/platform/msm_sdcc.1/by-name/userdata	/data		ext4    nosuid,nodev,barrier=1,noauto_da_alloc                          wait,check,encryptable=footer
-/dev/block/platform/msm_sdcc.1/by-name/cache	/cache		ext4    nosuid,nodev,barrier=1                                          wait
-#/dev/block/platform/msm_sdcc.1/by-name/persist	/persist	ext4    nosuid,nodev,barrier=1                                          wait
-/dev/block/platform/msm_sdcc.1/by-name/modem	/firmware	vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0        wait
-/dev/block/platform/msm_sdcc.1/by-name/boot	/boot		emmc    defaults                                                        recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/recovery	/recovery	emmc    defaults                                                        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/system       /system         ext4    ro,barrier=1,noatime                                		wait
+/dev/block/platform/msm_sdcc.1/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,errors=continue,journal_async_commit     wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/platform/msm_sdcc.1/by-name/userdata     /data           f2fs    noatime,nosuid,nodev,rw,inline_xattr                            wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/platform/msm_sdcc.1/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,errors=continue,journal_async_commit     wait,check,formattable
+/dev/block/platform/msm_sdcc.1/by-name/cache        /cache          f2fs    noatime,nosuid,nodev,rw,inline_xattr                            wait,check,formattable
+/dev/block/platform/msm_sdcc.1/by-name/persist      /persist        ext4    nosuid,nodev,barrier=1  						wait
+/dev/block/platform/msm_sdcc.1/by-name/modem        /firmware       vfat    defaults        defaults
+/dev/block/platform/msm_sdcc.1/by-name/boot         /boot           emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery       emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/misc         /misc           emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/sbl1         /sbl1           emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/tz           /tz             emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm            emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/sdi          /sdi            emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot          emmc    defaults        recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/splash       /splash         emmc    defaults        recoveryonly
 
-#/devices/msm_sdcc.1/mmc_host* auto auto defaults voldmanaged=sdcard0:27,nonremovable,noemulatedsd
-/devices/msm_sdcc.2/mmc_host* auto auto defaults voldmanaged=sdcard1:auto
-/devices/platform/xhci-hcd/usb1* auto auto defaults voldmanaged=usbdisk:auto
+/devices/msm_sdcc.2/mmc_host*            auto       auto        defaults         voldmanaged=sdcard1:auto
+/devices/platform/xhci-hcd/usb1*         auto		auto    	defaults         voldmanaged=usb:auto

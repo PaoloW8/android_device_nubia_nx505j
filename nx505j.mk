@@ -224,8 +224,8 @@ PRODUCT_PACKAGES += \
     NubiaDoze
 
 # FlipFlap app
-#PRODUCT_PACKAGES += \
-#    FlipFlap
+PRODUCT_PACKAGES += \
+    FlipFlap
 
 # Ramdisk
 PRODUCT_PACKAGES += \

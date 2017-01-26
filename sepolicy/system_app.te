@@ -3,3 +3,5 @@
 allow system_app device:chr_file { getattr ioctl };
 #allow system_app system_app_data_file:file execute;
 allow system_app ir_device:chr_file { getattr ioctl open read write };
+#allow system_app netd:binder call;
+#allow system_app netd_service:service_manager find;

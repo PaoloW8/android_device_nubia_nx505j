@@ -23,20 +23,22 @@
 
      1 HTC Style Dotcase
      2 Asus/LG Style Circle Window Cover
+     3 Rectangular window Cover
 
      For example, a device with Asus Circle Cover would set 2 -->
-    <integer name="config_deviceCoverType">1</integer>
+    <integer name="config_deviceCoverType">3</integer>
 
-    <!-- Define main circle parameters -->
-    <integer name="x_offset" translatable="false">0</integer>
-    <integer name="y_offset" translatable="false">0</integer>
-    <integer name="radius_offset" translatable="false">0</integer>
+    <!-- Rectangular parameters (config_deviceCoverType == 2) -->
+    <integer name="rectangular_window_top" translatable="false">0</integer>
+    <integer name="rectangular_window_left" translatable="false">0</integer>
+    <integer name="rectangular_window_width" translatable="false">1080</integer>
+    <integer name="rectangular_window_height" translatable="false">720</integer>
 
     <!-- Define Path to lid switch node. Node should report the following:
         OEPN = 0, Closed =1
         example path : "/sys/devices/virtual/switch/smartcover/state" -->
-    <string name="cover_node" translatable="false">/sys/devices/virtual/hall_device/hall_device/enable</string>
-    <!-- <string name="cover_node" translatable="false">/sys/devices/virtual/switch/cover/state</string> -->
+    <!-- <string name="cover_node" translatable="false">/sys/devices/virtual/hall_device/hall_device/enable</string> -->
+    <string name="cover_node" translatable="false">/sys/devices/virtual/switch/cover/state</string>
 
     <!-- Define path to lid Uevent node. Node should trigger on every cover change
          example path : "DEVPATH=/devices/virtual/switch/smartcover" -->

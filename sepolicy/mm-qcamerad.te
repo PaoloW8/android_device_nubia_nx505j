@@ -1,2 +1,2 @@
 #============= mm-qcamerad ==============
-#allow mm-qcamerad system_file:file execmod;
+allow mm-qcamerad system_file:file execmod;

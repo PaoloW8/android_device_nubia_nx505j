@@ -15,7 +15,7 @@
  */
 
 #include <cutils/log.h>
-#include <cutils/properties.h>
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,12 +23,13 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <pthread.h>
-#include <math.h>
 
 #include <sys/ioctl.h>
 #include <sys/types.h>
 
 #include <hardware/lights.h>
+
+#define LOG_TAG "lightHAL"
 
 /******************************************************************************/
 
@@ -138,8 +139,8 @@ write_int(char const* path, int value)
     fd = open(path, O_RDWR);
     if (fd >= 0) {
         char buffer[20];
-        int bytes = sprintf(buffer, "%d\n", value);
-        int amt = write(fd, buffer, bytes);
+        int bytes = snprintf(buffer, sizeof(buffer), "%d\n", value);
+        ssize_t amt = write(fd, buffer, (size_t)bytes);
         close(fd);
         return amt == -1 ? -errno : 0;
     } else {
@@ -208,6 +209,9 @@ set_light_backlight(struct light_device_t* dev,
         struct light_state_t const* state)
 {
     int err = 0;
+    if (!dev) {
+        return -1;
+    }
     int brightness = rgb_to_brightness(state);
     pthread_mutex_lock(&g_lock);
     err = write_int(LCD_FILE, brightness);
@@ -338,6 +342,9 @@ set_light_buttons(struct light_device_t* dev,
         struct light_state_t const* state)
 {
     int brightness = rgb_to_brightness(state);
+    if (!dev) {
+        return -1;
+    }
     pthread_mutex_lock(&g_lock);
     g_buttons = *state;
     if (brightness > 0) {
@@ -360,6 +367,9 @@ static int
 set_light_notifications(struct light_device_t* dev,
         struct light_state_t const* state)
 {
+    if (!dev) {
+        return -1;
+    }
     pthread_mutex_lock(&g_lock);
     g_notification = *state;
     set_breath_light_locked(BREATH_SOURCE_NOTIFICATION, &g_notification);
@@ -371,6 +381,9 @@ static int
 set_light_battery(struct light_device_t* dev,
         struct light_state_t const* state)
 {
+    if (!dev) {
+        return -1;
+    }
     pthread_mutex_lock(&g_lock);
     g_battery = *state;
     set_breath_light_locked(BREATH_SOURCE_BATTERY, &g_battery);
@@ -382,9 +395,12 @@ static int
 set_light_attention(struct light_device_t* dev,
         struct light_state_t const* state)
 {
+    if (!dev) {
+        return -1;
+    }
     pthread_mutex_lock(&g_lock);
     g_attention = *state;
-    //set_breath_light_locked(BREATH_SOURCE_ATTENTION, &g_attention);
+    set_breath_light_locked(BREATH_SOURCE_ATTENTION, &g_attention);
     pthread_mutex_unlock(&g_lock);
     return 0;
 }
@@ -430,6 +446,10 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     pthread_once(&g_init, init_globals);
 
     struct light_device_t *dev = malloc(sizeof(struct light_device_t));
+
+    if (!dev)
+        return -ENOMEM;
+
     memset(dev, 0, sizeof(*dev));
 
     dev->common.tag = HARDWARE_DEVICE_TAG;

@@ -1,7 +1,7 @@
 #
 # system.prop for NX505J Z7 MAX
 #
-ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 persist.sys.usb.config=adb
 
@@ -106,6 +106,8 @@ ro.bluetooth.alwaysbleon=true
 #
 #snapdragon value add features
 #
+af.fast_track_multiplier=1
+audio_hal.period_size=192
 ro.qc.sdk.audio.ssr=false
 ##fluencetype can be "fluence" or "fluencepro" or "none"
 ro.qc.sdk.audio.fluencetype=fluence

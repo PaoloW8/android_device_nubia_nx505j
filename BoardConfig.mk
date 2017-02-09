@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2014 The CyanogenMod Project
+#           (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +23,6 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 	frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl \
 	frameworks/base/data/keyboards/Generic.kcm:system/usr/keychars/Generic.kcm, $(PRODUCT_COPY_FILES))
 
-
 # RIL
 TARGET_RIL_VARIANT := caf
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
@@ -34,9 +34,10 @@ TARGET_OTA_ASSERT_DEVICE := NX505J,nx505j,cm_NX505J,cm_nx505j,NX505j,jNX505
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_CACHEIMAGE_PARTITION_SIZE := 524288000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12738083840
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 28248620544
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
@@ -78,7 +79,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 TARGET_KERNEL_SOURCE := kernel/nubia/nx505j
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CONFIG := cm-nx505j_defconfig
+TARGET_KERNEL_CONFIG := lineage_nx505j_defconfig
 TARGET_ZTEMT_DTS := true
 
 # Power
@@ -86,17 +87,20 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := false
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
 AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
+AUDIO_FEATURE_ENABLED_FLUENCE := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # FM
 #QCOM_FM_ENABLED := true
 #AUDIO_FEATURE_ENABLED_FM := true
+BOARD_HAVE_QCOM_FM := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 
 # Bluetooth
@@ -158,17 +162,21 @@ BOARD_HARDWARE_CLASS += \
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Init
+TARGET_INIT_UMOUNT_AND_FSCK_IS_UNSAFE := true
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
-#BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true

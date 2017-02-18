@@ -286,6 +286,10 @@
     <!-- afe-proxy end-->
     <ctl name="AFE_PCM_RX Port Mixer INTERNAL_FM_TX" value="0" />
 
+    <!-- echo reference -->
+    <ctl name="EC_REF_RX" value="NONE" />
+    <!-- echo reference end -->
+
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="deep-buffer-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
@@ -1160,6 +1164,9 @@
     <path name="capture-fm">
     </path>
 
+    <path name="echo-reference">
+        <ctl name="EC_REF_RX" value="SLIM_RX" />
+    </path>
 
     <path name="aanc-handset-mic">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />

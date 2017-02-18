@@ -5,6 +5,18 @@ ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 #persist.sys.usb.config=adb
 qcom.bluetooth.soc=smd
+ro.bluetooth.hfp.ver=1.7
+ro.qualcomm.bt.hci_transport=smd
+
+ro.bluetooth.dun=false
+ro.bluetooth.sap=false
+ro.qualcomm.bluetooth.ftp=true
+ro.qualcomm.bluetooth.hfp=true
+ro.qualcomm.bluetooth.hsp=true
+ro.qualcomm.bluetooth.map=true
+ro.qualcomm.bluetooth.nap=true
+ro.qualcomm.bluetooth.opp=true
+ro.qualcomm.bluetooth.pbap=true
 
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
@@ -24,13 +36,14 @@ persist.radio.rat_on=combine
 persist.radio.multisim.config=dsds
 ro.telephony.default_network=10
 ro.telephony.default_cdma_sub=0
-ro.ril.force_eri_from_xml=true
-persist.radio.apm_sim_not_pwdn=1
+#ro.ril.force_eri_from_xml=true
+ro.ril.telephony.mqanelements=5
 ro.telephony.ril.config=simactivation
-persist.data.qmi.adb_logmask=0
-persist.radio.msgtunnel.start=false
 
-persist.radio.oem_socket=false
+persist.radio.apm_sim_not_pwdn=1
+persist.data.qmi.adb_logmask=0
+#persist.radio.msgtunnel.start=false
+#persist.radio.oem_socket=false
 persist.radio.no_wait_for_card=1
 persist.radio.add_power_save=1
 
@@ -119,10 +132,12 @@ ro.bluetooth.alwaysbleon=true
 #
 #snapdragon value add features
 #
+af.fast_track_multiplier=1
+audio_hal.period_size=192
 ro.qc.sdk.audio.ssr=false
 ##fluencetype can be "fluence" or "fluencepro" or "none"
 ro.qc.sdk.audio.fluencetype=fluence
-persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicecall=false
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=false
 

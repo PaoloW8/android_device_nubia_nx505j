@@ -180,6 +180,7 @@ on boot
     # Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+    write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
@@ -302,6 +303,7 @@ on post-fs-data
 	#hall_device
    	chown system system /sys/class/hall_device/hall_device/enable
    	chmod 0644 /sys/class/hall_device/hall_device/enable
+	write /sys/devices/virtual/hall_device/hall_device/enable 1
     
 	#proximity
 	mkdir /persist/proxdata 0775 system system
@@ -597,7 +599,7 @@ service time_daemon /system/bin/time_daemon
 
 on property:vold.decrypt=trigger_restart_framework
     start config_bt_addr
-    start config_bluetooth
+#    start config_bluetooth
     start wcnss-service
 
 service config_bt_addr /system/bin/btnvtool -O
@@ -606,11 +608,11 @@ service config_bt_addr /system/bin/btnvtool -O
     group bluetooth radio
     oneshot
 
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
-    class core
-    user root
-    group bluetooth net_bt_admin qcom_diag diag radio
-    oneshot
+#service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
+#    class core
+#    user root
+#    group bluetooth net_bt_admin qcom_diag diag radio
+#    oneshot
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
@@ -715,3 +717,8 @@ on property:persist.usb.chgdisabled=0
 
 on charger
     trigger ffbm
+
+on property:sys.boot_completed=1
+    # LMK
+    write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
+

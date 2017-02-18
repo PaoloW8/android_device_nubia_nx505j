@@ -151,8 +151,7 @@
     <!-- The RadioAccessFamilies supported by the device.
          Empty is viewed as "all". Only used on devices which
          don't support RIL_REQUEST_GET_RADIO_CAPABILITY
-         format is UMTS|LTE|...
-    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO|GSM|WCDMA|TD_SCDMA</string> -->
+         format is UMTS|LTE|... -->
     <string translatable="false" name="config_radio_access_family">GPRS|EDGE|UMTS|IS95A|IS95B|1XRTT|EVDO_0|EVDO_A|HSDPA|HSUPA|HSPA|EVDO_B|EHRPD|LTE|HSPAP|GSM|TD_SCDMA|HS|CDMA|EVDO|WCDMA</string>
 
     <!-- If the DUN connection for this CDMA device supports more than just DUN -->

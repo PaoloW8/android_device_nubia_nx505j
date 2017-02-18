@@ -18,7 +18,6 @@
 
 -->
 <resources>
-
     <!-- Define Device Lid Style
 
      1 HTC Style Dotcase
@@ -36,12 +35,10 @@
 
     <!-- Define Path to lid switch node. Node should report the following:
         OEPN = 0, Closed =1
-        example path : "/sys/devices/virtual/switch/smartcover/state" -->
-    <!-- <string name="cover_node" translatable="false">/sys/devices/virtual/hall_device/hall_device/enable</string> -->
-    <string name="cover_node" translatable="false">/sys/devices/virtual/switch/cover/state</string>
+        example path : "/sys/devices/virtual/switch/smartcover/state"
+    <string name="cover_node" translatable="false">/sys/devices/virtual/switch/cover/state</string> -->
 
     <!-- Define path to lid Uevent node. Node should trigger on every cover change
-         example path : "DEVPATH=/devices/virtual/switch/smartcover" -->
-    <string name="cover_uevent_match" translatable="false">DEVPATH=/devices/virtual/switch/cover</string>
-
+         example path : "DEVPATH=/devices/virtual/switch/smartcover"
+    <string name="cover_uevent_match" translatable="false">DEVPATH=/devices/virtual/switch/cover</string> -->
 </resources>

@@ -180,7 +180,7 @@ on boot
     # Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
-    write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
+    #write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
@@ -718,7 +718,7 @@ on property:persist.usb.chgdisabled=0
 on charger
     trigger ffbm
 
-on property:sys.boot_completed=1
+#on property:sys.boot_completed=1
     # LMK
-    write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
+#    write /sys/module/lowmemorykiller/parameters/minfree "14746,18432,22118,25805,33038,41988"
 

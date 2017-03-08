@@ -198,10 +198,16 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 TARGET_PROVIDES_WCNSS_QMI := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
-TARGET_RECOVERY_QCOM_RTC_FIX := true
+BOARD_SUPPRESS_EMMC_WIPE := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_RECOVERY_SWIPE := true
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # TWRP recovery
 ifeq ($(WITH_TWRP),true)
@@ -213,8 +219,11 @@ TW_TARGET_USES_QCOM_BSP := true
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
 TW_IGNORE_MISC_WIPE_DATA := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TW_INCLUDE_NTFS_3G := true
-#TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := true
+TW_DEVICE_VERSION := 1
+
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 PRODUCT_COPY_FILES += \
 	bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata \
